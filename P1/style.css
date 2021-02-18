@@ -1,5 +1,7 @@
 #headDiv {
     position: fixed;
+    border: red;
+    width: 90%;
     background-color: rgb(40, 164, 206);    
     text-align: center;
   }
