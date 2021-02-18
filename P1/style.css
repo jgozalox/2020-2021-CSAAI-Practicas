@@ -1,5 +1,5 @@
-.myDiv {
-    border: 5px outset red;
-    background-color: lightblue;    
+#headDiv {
+    position: fixed;
+    background-color: rgb(40, 164, 206);    
     text-align: center;
   }
