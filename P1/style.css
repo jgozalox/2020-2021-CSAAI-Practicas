@@ -1,7 +1,14 @@
-#headDiv {
-    position: fixed;
-    border: red;
-    width: 90%;
-    background-color: rgb(40, 164, 206);    
-    text-align: center;
-  }
+#nombreYapellido {
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  border: red;
+  width: 90%;
+  background-color: rgb(40, 164, 206);    
+  text-align: center;
+}
+
+#aka {
+  position: relative;
+  left: 30px;
+  border: 3px solid #73AD21;
+}
