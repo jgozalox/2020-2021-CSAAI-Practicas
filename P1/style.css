@@ -40,11 +40,10 @@ td, th {
 
 
 #mainpic{
-  border-style: solid;
   border-color: black;
   position:-webkit-sticky;
   position: sticky;
-  top:0;
+  border-bottom: 5px solid black;
 }
 
 #info {
