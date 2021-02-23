@@ -1,4 +1,7 @@
 /*Con border box no se nos desbordan de tamaño los elementos https://midu.dev/que-es-y-para-que-sirve-box-sizing-border-box/*/
+body{
+  background-color: #404040;
+}
 * {
   box-sizing: border-box;
   font-family: Arial, Helvetica, sans-serif;
@@ -8,11 +11,11 @@
   position:-webkit-sticky;
   position: sticky;
   top:0;
-  background-color: #666;
   text-align: left;
   font-size: 35px;
   padding-left: 10px;
   color: white;
+  background-color: #404040;
 }
 
 
@@ -30,10 +33,18 @@ nav {
   text-align: center;
 }
 
+td, th {
+  text-align: left;
+  padding: 10px;
+}
+
 
 #mainpic{
   border-style: solid;
   border-color: black;
+  position:-webkit-sticky;
+  position: sticky;
+  top:0;
 }
 
 #info {
