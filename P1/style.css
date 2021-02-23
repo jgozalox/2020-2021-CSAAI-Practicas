@@ -1,14 +1,63 @@
-#nombreYapellido {
-  position: -webkit-sticky; /* Safari */
+/*Con border box no se nos desbordan de tamaño los elementos https://midu.dev/que-es-y-para-que-sirve-box-sizing-border-box/*/
+* {
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#header {
+  position:-webkit-sticky;
   position: sticky;
-  border: red;
-  width: 90%;
-  background-color: rgb(40, 164, 206);    
+  top:0;
+  background-color: #666;
+  text-align: left;
+  font-size: 35px;
+  padding-left: 10px;
+  color: white;
+}
+
+
+#middlediv {
+  display: -webkit-flex;
+  display: flex;
+}
+
+
+nav {
+  -ms-flex: 1;
+  flex: 1;
+  background: #ccc;
+  padding: 20px;
   text-align: center;
 }
 
-#aka {
-  position: relative;
-  left: 30px;
-  border: 3px solid #73AD21;
+
+#mainpic{
+  border-style: solid;
+  border-color: black;
+}
+
+#info {
+  -webkit-flex: 3;
+  -ms-flex: 3;
+  flex: 3;
+  background-color: #f1f1f1;
+  padding: 10px;
+}
+
+
+#foot {
+  margin-top: 25px;
+  background-color: #777;
+  padding: 10px;
+  text-align: center;
+  color: white;
+}
+
+/* Responsive layout - makes the menu and the content 
+(inside the section) sit on top of each other instead of next to each other */
+@media (max-width: 600px) {
+  section {
+    -webkit-flex-direction: column;
+    flex-direction: column;
+  }
 }
