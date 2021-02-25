@@ -42,7 +42,6 @@ td, th {
   border-color: black;
   position:-webkit-sticky;
   position: sticky;
-  border-bottom: 5px solid black;
 }
 
 #info {
