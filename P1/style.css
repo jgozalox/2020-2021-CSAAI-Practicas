@@ -8,9 +8,6 @@ body{
 }
 
 #header {
-  position:-webkit-sticky;
-  position: sticky;
-  top:0;
   text-align: right;
   font-size: 35px;
   color: white;
@@ -24,6 +21,42 @@ body{
 }
 
 
+header{
+  top:0;
+  position:-webkit-sticky;
+  position: sticky;
+  
+ 
+}
+header nav{
+  background: green;
+  
+}
+
+    header nav ul{
+      overflow: hidden;
+      background: #404040;
+    }
+    
+        header nav ul li{
+          float: right;
+        }
+
+            header nav ul li a {
+              display: block;
+              padding: 20px;
+              color: #fff;
+            }
+                header nav ul li a:hover {
+                  background: #777;
+                }
+
+
+td, th {
+  text-align: left;
+  padding: 10px;
+}
+
 nav {
   -ms-flex: 1;
   flex: 1;
@@ -32,16 +65,17 @@ nav {
   text-align: center;
 }
 
-td, th {
-  text-align: left;
-  padding: 10px;
-}
-
 
 #mainpic{
   border-color: black;
   position:-webkit-sticky;
   position: sticky;
+}
+
+#nationalitypic{
+  border-color: black;
+  width: 25px;
+  height: 17px;
 }
 
 #info {
