@@ -75,8 +75,11 @@ nav {
   flex: 3;
   background-color: #f1f1f1;
   padding: 10px;
+  padding-right: 30px;
+  padding-left: 20px;
 }
 
+ 
 
 #foot {
   margin-bottom: 0px;
