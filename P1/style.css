@@ -51,6 +51,10 @@ td, th {
   padding: 10px;
 }
 
+.lineaDebajo{
+  margin-top: -80px;
+}
+
 nav {
   -ms-flex: 1;
   flex: 1;
