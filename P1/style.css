@@ -24,14 +24,14 @@ body{
 
 #navbar {
   overflow: hidden;
-  background-color: #404040;
+  background-color:#ffe066;
   position: sticky;
   top: 0;
   width: 100%;
 }
 
 a:hover {
-  background-color:  #333;
+  background-color:  #ffffcc;
   font-weight: lighter;
   font-weight: bolder;
 }
@@ -39,7 +39,7 @@ a:hover {
 #navbar a {
   float: right;
   display: block;
-  color: #f2f2f2;
+  color: black;
   text-align: center;
   padding: 14px;
   text-decoration: none;
@@ -94,10 +94,10 @@ nav {
 
 #foot {
   margin-bottom: 0px;
-  background-color: #777;
+  background-color: #ffffcc;
   padding: 10px;
   text-align: center;
-  color: white;
+  color: black;
 }
 
 
