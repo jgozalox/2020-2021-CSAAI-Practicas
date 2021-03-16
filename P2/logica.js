@@ -10,9 +10,17 @@ var segundoNum;
 
 function botonPulsado(a)
 {
-    //document.getElementById('result').innerHTML = this.innerHTML
     console.log(this.innerHTML)
-    result.innerHTML += this.innerHTML
+    if (isNaN(this.innerHTML)){
+      //Pulsacion de operador
+      if (tresElem.length == 0){
+        //No hará nada ya que no hay num (array vacio)
+      }
+    }else{
+      //Pulsacion de numero
+
+    }
+    //result.innerHTML += this.innerHTML
 
 
 }
@@ -32,12 +40,6 @@ var num8 = document.getElementById('bu8')
 var num9 = document.getElementById('bu9')
 var botonesNumero = [num1, num2, num3, num4, num5, num6, num7, num8, num9];
 
-//Otra forma de hacer el bucle for
-//botonesNumero.forEach(function(elemento,indice,array){
-//    console.log(elemento.innerHTML, indice)
-//})
-
-//Recorro array y muestro elemento y tipo (convertiremos este array de strings a array de ints)
 for (var i=0; i<botonesNumero.length; i++){ 
     console.log(botonesNumero[i].innerHTML,typeof(botonesNumero[i].innerHTML));
     botonesNumero[i].addEventListener("click", botonPulsado);
@@ -60,3 +62,8 @@ for (var i=0; i<botonesOperando.length; i++){
   console.log(botonesOperando[i].innerHTML,typeof(botonesOperando[i].innerHTML));
   botonesOperando[i].addEventListener("click", botonPulsado);
 }
+
+//Otra forma de hacer el bucle for
+//nombreArray.forEach(function(elemento,indice,array){
+//    console.log(elemento.innerHTML, indice)
+//})
