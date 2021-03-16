@@ -1,0 +1,9 @@
+#result{
+    border: 1px solid black;
+    text-align: right;
+    margin-right: 90%;
+}
+
+button{
+    font-weight: bold;
+}
