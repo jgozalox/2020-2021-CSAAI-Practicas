@@ -40,17 +40,23 @@ var botonesNumero = [num1, num2, num3, num4, num5, num6, num7, num8, num9];
 //Recorro array y muestro elemento y tipo (convertiremos este array de strings a array de ints)
 for (var i=0; i<botonesNumero.length; i++){ 
     console.log(botonesNumero[i].innerHTML,typeof(botonesNumero[i].innerHTML));
+    botonesNumero[i].addEventListener("click", botonPulsado);
 }
 
+var ac = document.getElementById('buac')
+var per = document.getElementById('buper')
+var el = document.getElementById('buel')
+var c = document.getElementById('buc')
+var div = document.getElementById('budiv')
+var mul = document.getElementById('bumul')
+var mas = document.getElementById('bumas')
+var poi = document.getElementById('bupoi')
+var eq = document.getElementById('bueq')
+var men = document.getElementById('bumen')
 
+var botonesOperando = [ac, per, el, c, div, mul, mas, poi, eq, men]
 
-document.getElementById('buac').addEventListener("click", botonPulsado);
-document.getElementById('buper').addEventListener("click", botonPulsado);
-document.getElementById('buel').addEventListener("click", botonPulsado);
-document.getElementById('buc').addEventListener("click", botonPulsado);
-document.getElementById('budiv').addEventListener("click", botonPulsado);
-document.getElementById('bumul').addEventListener("click", botonPulsado);
-document.getElementById('bumas').addEventListener("click", botonPulsado);
-document.getElementById('bupoi').addEventListener("click", botonPulsado);
-document.getElementById('bueq').addEventListener("click", botonPulsado);
-document.getElementById('bumen').addEventListener("click", botonPulsado);
+for (var i=0; i<botonesOperando.length; i++){ 
+  console.log(botonesOperando[i].innerHTML,typeof(botonesOperando[i].innerHTML));
+  botonesOperando[i].addEventListener("click", botonPulsado);
+}
