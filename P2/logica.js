@@ -7,6 +7,7 @@ function botonPulsado(a)
 {
     //document.getElementById('result').innerHTML = this.innerHTML
     console.log(this.innerHTML)
+    result.innerHTML = this.innerHTML
 }
 
 
