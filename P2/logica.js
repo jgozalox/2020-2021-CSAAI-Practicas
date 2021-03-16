@@ -9,9 +9,4 @@ function operaciones(a)
 
 var result = document.getElementById('result')
 
-document.getElementById('num1').addEventListener("click", operaciones);
-document.getElementById('num2').addEventListener("click", operaciones);
-document.getElementById('num3').addEventListener("click", operaciones);
-document.getElementById('num4').addEventListener("click", operaciones);
-document.getElementById('num5').addEventListener("click", operaciones);
-document.getElementById('num6').addEventListener("click", operaciones);
+document.getElementById('bu1').addEventListener("click", operaciones);
