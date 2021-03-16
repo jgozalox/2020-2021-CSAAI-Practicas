@@ -1,4 +1,6 @@
 //Lógica de calculadora
+//Formato expresiones: <numero> <operador> <numero> (solo 2 numeros, no ampliable a 3)
+
 console.log("Consola")
 
 function operaciones(a)
