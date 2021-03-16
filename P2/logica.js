@@ -2,12 +2,21 @@
 //Formato expresiones: <numero> <operador> <numero> (solo 2 numeros, no ampliable a 3)
 
 console.log("Consola")
+var primerNum;
+var operando;
+var segundoNum;
 
 function botonPulsado(a)
 {
     //document.getElementById('result').innerHTML = this.innerHTML
     console.log(this.innerHTML)
-    result.innerHTML = this.innerHTML
+    if (result.innerHTML != "Resultado"){
+            result.innerHTML += this.innerHTML
+    } else{
+        result.innerHTML = this.innerHTML
+    }
+    
+
 }
 
 
