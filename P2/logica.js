@@ -32,6 +32,12 @@ var num8 = document.getElementById('bu8')
 var num9 = document.getElementById('bu9')
 var botonesNumero = [num1, num2, num3, num4, num5, num6, num7, num8, num9];
 
+botonesNumero.forEach(function(elemento,indice,array){
+    console.log(elemento.innerHTML, indice)
+})
+
+
+
 document.getElementById('buac').addEventListener("click", botonPulsado);
 document.getElementById('buper').addEventListener("click", botonPulsado);
 document.getElementById('buel').addEventListener("click", botonPulsado);
