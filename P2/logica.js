@@ -23,9 +23,16 @@ function botonPulsado(a)
             console.log("elem2",tresElem[1])
           }
         }else{
-          console.log("Vamos a operar", tresElem[], tresElem[], tresElem[])
+          console.log("Vamos a operar", tresElem[0], tresElem[1], tresElem[2])
           console.log("Vamos a asignar el resultado a la pos0")
-
+          switch(tresElem[1]){
+            case X:
+              console.log("multiplicacion");
+            case /:
+              console.log("division");
+            default:
+              console.log("what");
+          }
         }
       }
     }else{
