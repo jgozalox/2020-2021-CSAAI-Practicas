@@ -11,7 +11,7 @@ var segundoNum;
 function botonPulsado(a)
 {
     
-    if (isNaN(this.innerHTML)){
+    if (isNaN(this.innerHTML) && this.innerHTML != "." ){
       //Pulsacion de operador
       if (tresElem.length == 0){
         //No hará nada ya que no hay num (array vacio)
@@ -32,7 +32,11 @@ function botonPulsado(a)
         if (tresElem.length == 0){
           tresElem[0] = this.innerHTML
         }else{
-          tresElem[0] += this.innerHTML
+          if (tresElem[0].includes(".") == true && this.innerHTML == "."){
+            console.log("Ya hay un punto")
+          }else{
+            tresElem[0] += this.innerHTML
+          }
         }
         console.log("elem1",tresElem[0])
       }else if(tresElem.length >= 2){
