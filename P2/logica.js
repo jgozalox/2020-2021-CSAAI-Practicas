@@ -15,10 +15,19 @@ function botonPulsado(a)
       //Pulsacion de operador
       if (tresElem.length == 0){
         //No hará nada ya que no hay num (array vacio)
+        console.log("Introduzca primero un numero")
+      }else{
+        if (this.innerHTML != "="){
+          console.log("operador")
+        }else{
+          console.log("=,realizo operacion")
+        }
       }
     }else{
       //Pulsacion de numero
+      if(tresElem.length < 2){
 
+      }
     }
     //result.innerHTML += this.innerHTML
 
