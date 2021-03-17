@@ -22,6 +22,7 @@ function botonPulsado(a)
         if (this.innerHTML != "="){
           if(tresElem.length == 1){
             tresElem[1] = this.innerHTML;
+            result.innerHTML += tresElem[1];
             console.log("elem2",tresElem[1])
           }
         }else{
@@ -32,15 +33,15 @@ function botonPulsado(a)
               console.log(resultadoOp)
               break;
             case "/":
-              console.log("division");
+              resultadoOp = tresElem[0] / tresElem[2]
               break;
             default:
               console.log("what");
           }
           tresElem[0] = resultadoOp;
+          console.log("La matriz ahora", tresElem[0], tresElem[1], tresElem[2])
           result.innerHTML = tresElem[0];
-          delete tresElem[1];
-          delete tresElem[2];
+          //Borrar dos ultimos elementos del array
         }
       }
     }else{
@@ -48,24 +49,29 @@ function botonPulsado(a)
       if(tresElem.length < 2){
         if (tresElem.length == 0){
           tresElem[0] = this.innerHTML
+          result.innerHTML += this.innerHTML
         }else{
           if (tresElem[0].includes(".") == true && this.innerHTML == "."){
             console.log("Ya hay un punto")
           }else{
             tresElem[0] += this.innerHTML
+            result.innerHTML += this.innerHTML
           }
         }
         console.log("elem1",tresElem[0])
       }else if(tresElem.length >= 2){
         if (tresElem.length == 2){
           tresElem[2] = this.innerHTML
+          result.innerHTML += this.innerHTML
         }else{
           if (tresElem[2].includes(".") == true && this.innerHTML == "."){
             console.log("Ya hay un punto")
           }else{
             tresElem[2] += this.innerHTML
+            result.innerHTML += this.innerHTML
           }
         }
+        
         console.log("elem3",tresElem[2])
       }
     }
