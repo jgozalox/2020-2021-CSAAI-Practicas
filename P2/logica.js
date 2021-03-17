@@ -29,15 +29,18 @@ function botonPulsado(a)
     }else{
       //Pulsacion de numero
       if(tresElem.length < 2){
-        if (tresElem.length = 0){
+        if (tresElem.length == 0){
           tresElem[0] = this.innerHTML
-          console.log("=,realizo vaefcesdfvcsdefes")
         }else{
           tresElem[0] += this.innerHTML
         }
         console.log("elem1",tresElem[0])
-      }else if(tresElem.length == 2){
-        tresElem[2] += this.innerHTML;
+      }else if(tresElem.length >= 2){
+        if (tresElem.length == 2){
+          tresElem[2] = this.innerHTML
+        }else{
+          tresElem[2] += this.innerHTML
+        }
         console.log("elem3",tresElem[2])
       }
     }
