@@ -35,13 +35,23 @@ function botonPulsado(a)
             case "/":
               resultadoOp = tresElem[0] / tresElem[2]
               break;
+            case "-":
+              resultadoOp = tresElem[0] - tresElem[2]
+              break;
+            case "+":
+              resultadoOp = parseFloat(tresElem[0]) + parseFloat(tresElem[2])
+              break;
+            case "^":
+              resultadoOp = Math.pow(tresElem[0], tresElem[2])
+              break;
             default:
               console.log("what");
           }
-          tresElem[0] = resultadoOp;
+          tresElem = [resultadoOp, ,];
           console.log("La matriz ahora", tresElem[0], tresElem[1], tresElem[2])
           result.innerHTML = tresElem[0];
           //Borrar dos ultimos elementos del array
+
         }
       }
     }else{
