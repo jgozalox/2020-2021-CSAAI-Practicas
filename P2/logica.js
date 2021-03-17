@@ -96,7 +96,7 @@ function botonPulsado(a)
 
 
 
-
+var num0 = document.getElementById('bu0')
 var num1 = document.getElementById('bu1')
 var num2 = document.getElementById('bu2')
 var num3 = document.getElementById('bu3')
@@ -106,7 +106,7 @@ var num6 = document.getElementById('bu6')
 var num7 = document.getElementById('bu7')
 var num8 = document.getElementById('bu8')
 var num9 = document.getElementById('bu9')
-var botonesNumero = [num1, num2, num3, num4, num5, num6, num7, num8, num9];
+var botonesNumero = [num0, num1, num2, num3, num4, num5, num6, num7, num8, num9];
 
 for (var i=0; i<botonesNumero.length; i++){ 
     //console.log(botonesNumero[i].innerHTML,typeof(botonesNumero[i].innerHTML));
