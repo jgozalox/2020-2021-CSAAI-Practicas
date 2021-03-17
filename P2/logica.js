@@ -30,7 +30,7 @@ function botonPulsado(a)
         }else{
           console.log("Vamos a operar", tresElem[0], tresElem[1], tresElem[2])
           switch(tresElem[1]){
-            case "X":
+            case "x":
               resultadoOp = tresElem[0] * tresElem[2]
               console.log(resultadoOp)
               break;
