@@ -23,7 +23,9 @@ function botonPulsado(a)
             console.log("elem2",tresElem[1])
           }
         }else{
-          console.log("=,realizo operacion")
+          console.log("Vamos a operar", tresElem[], tresElem[], tresElem[])
+          console.log("Vamos a asignar el resultado a la pos0")
+
         }
       }
     }else{
@@ -52,7 +54,6 @@ function botonPulsado(a)
         console.log("elem3",tresElem[2])
       }
     }
-    //result.innerHTML += this.innerHTML
 
 
 }
