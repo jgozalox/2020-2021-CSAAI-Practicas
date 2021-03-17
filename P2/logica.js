@@ -9,12 +9,15 @@ var operando;
 var segundoNum;
 var resultadoOp;
 var result = document.getElementById('result')
+var banderaOnOff = false;
 
 function botonPulsado(a)
 {
     if (this.innerHTML == "AC"){
       tresElem = [];
       result.innerHTML = " "
+    }else if(this.innerHTML == "DEL"){
+      console.log("borrar")
     }else if (isNaN(this.innerHTML) && this.innerHTML != "." ){
       //Pulsacion de operador
       if (tresElem.length == 0){
@@ -93,8 +96,19 @@ function botonPulsado(a)
 
 }
 
+function encender(){
+  if (banderaOnOff == false){
+    document.getElementById("result").style.backgroundColor = "#ffffff";
+    banderaOnOff = true;
+  }else{
+    document.getElementById("result").style.backgroundColor = "#000000";
+    banderaOnOff = false;
+  }
+  tresElem = [];
+}
 
 
+document.getElementById('onoffbutton').onclick = function(){encender()};
 
 var num0 = document.getElementById('bu0')
 var num1 = document.getElementById('bu1')
@@ -116,7 +130,7 @@ for (var i=0; i<botonesNumero.length; i++){
 var ac = document.getElementById('buac')
 var per = document.getElementById('buper')
 var el = document.getElementById('buel')
-var c = document.getElementById('buc')
+var c = document.getElementById('budel')
 var div = document.getElementById('budiv')
 var mul = document.getElementById('bumul')
 var mas = document.getElementById('bumas')
