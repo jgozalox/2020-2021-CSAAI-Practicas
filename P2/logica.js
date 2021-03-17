@@ -43,7 +43,11 @@ function botonPulsado(a)
         if (tresElem.length == 2){
           tresElem[2] = this.innerHTML
         }else{
-          tresElem[2] += this.innerHTML
+          if (tresElem[2].includes(".") == true && this.innerHTML == "."){
+            console.log("Ya hay un punto")
+          }else{
+            tresElem[2] += this.innerHTML
+          }
         }
         console.log("elem3",tresElem[2])
       }
