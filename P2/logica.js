@@ -7,6 +7,8 @@ var tresElem = [];
 var primerNum;
 var operando;
 var segundoNum;
+var resultadoOp;
+var result = document.getElementById('result')
 
 function botonPulsado(a)
 {
@@ -24,15 +26,21 @@ function botonPulsado(a)
           }
         }else{
           console.log("Vamos a operar", tresElem[0], tresElem[1], tresElem[2])
-          console.log("Vamos a asignar el resultado a la pos0")
           switch(tresElem[1]){
-            case X:
-              console.log("multiplicacion");
-            case /:
+            case "X":
+              resultadoOp = tresElem[0] * tresElem[2]
+              console.log(resultadoOp)
+              break;
+            case "/":
               console.log("division");
+              break;
             default:
               console.log("what");
           }
+          tresElem[0] = resultadoOp;
+          result.innerHTML = tresElem[0];
+          delete tresElem[1];
+          delete tresElem[2];
         }
       }
     }else{
@@ -66,7 +74,7 @@ function botonPulsado(a)
 }
 
 
-var result = document.getElementById('result')
+
 
 
 var num1 = document.getElementById('bu1')
