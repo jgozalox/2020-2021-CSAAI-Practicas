@@ -12,8 +12,10 @@ var result = document.getElementById('result')
 
 function botonPulsado(a)
 {
-    
-    if (isNaN(this.innerHTML) && this.innerHTML != "." ){
+    if (this.innerHTML == "AC"){
+      tresElem = [];
+      result.innerHTML = " "
+    }else if (isNaN(this.innerHTML) && this.innerHTML != "." ){
       //Pulsacion de operador
       if (tresElem.length == 0){
         //No hará nada ya que no hay num (array vacio)
@@ -47,8 +49,10 @@ function botonPulsado(a)
             default:
               console.log("what");
           }
-          tresElem = [resultadoOp, ,];
+          tresElem = [];
+          tresElem[0] = resultadoOp;
           console.log("La matriz ahora", tresElem[0], tresElem[1], tresElem[2])
+          console.log("Tamaño matriz", tresElem.length)
           result.innerHTML = tresElem[0];
           //Borrar dos ultimos elementos del array
 
@@ -105,7 +109,7 @@ var num9 = document.getElementById('bu9')
 var botonesNumero = [num1, num2, num3, num4, num5, num6, num7, num8, num9];
 
 for (var i=0; i<botonesNumero.length; i++){ 
-    console.log(botonesNumero[i].innerHTML,typeof(botonesNumero[i].innerHTML));
+    //console.log(botonesNumero[i].innerHTML,typeof(botonesNumero[i].innerHTML));
     botonesNumero[i].addEventListener("click", botonPulsado);
 }
 
@@ -123,7 +127,7 @@ var men = document.getElementById('bumen')
 var botonesOperando = [ac, per, el, c, div, mul, mas, poi, eq, men]
 
 for (var i=0; i<botonesOperando.length; i++){ 
-  console.log(botonesOperando[i].innerHTML,typeof(botonesOperando[i].innerHTML));
+  //console.log(botonesOperando[i].innerHTML,typeof(botonesOperando[i].innerHTML));
   botonesOperando[i].addEventListener("click", botonPulsado);
 }
 
