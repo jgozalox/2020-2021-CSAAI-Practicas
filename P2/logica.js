@@ -105,40 +105,42 @@ function encender(){
     banderaOnOff = false;
   }
   tresElem = [];
+  result.innerHTML = " "
 }
 
 
 document.getElementById('onoffbutton').onclick = function(){encender()};
 
-var num0 = document.getElementById('bu0')
-var num1 = document.getElementById('bu1')
-var num2 = document.getElementById('bu2')
-var num3 = document.getElementById('bu3')
-var num4 = document.getElementById('bu4')
-var num5 = document.getElementById('bu5')
-var num6 = document.getElementById('bu6')
-var num7 = document.getElementById('bu7')
-var num8 = document.getElementById('bu8')
-var num9 = document.getElementById('bu9')
-var botonesNumero = [num0, num1, num2, num3, num4, num5, num6, num7, num8, num9];
+const num0 = document.getElementById('bu0')
+const num1 = document.getElementById('bu1')
+const num2 = document.getElementById('bu2')
+const num3 = document.getElementById('bu3')
+const num4 = document.getElementById('bu4')
+const num5 = document.getElementById('bu5')
+const num6 = document.getElementById('bu6')
+const num7 = document.getElementById('bu7')
+const num8 = document.getElementById('bu8')
+const num9 = document.getElementById('bu9')
+
+const botonesNumero = [num0, num1, num2, num3, num4, num5, num6, num7, num8, num9];
 
 for (var i=0; i<botonesNumero.length; i++){ 
     //console.log(botonesNumero[i].innerHTML,typeof(botonesNumero[i].innerHTML));
     botonesNumero[i].addEventListener("click", botonPulsado);
 }
 
-var ac = document.getElementById('buac')
-var per = document.getElementById('buper')
-var el = document.getElementById('buel')
-var c = document.getElementById('budel')
-var div = document.getElementById('budiv')
-var mul = document.getElementById('bumul')
-var mas = document.getElementById('bumas')
-var poi = document.getElementById('bupoi')
-var eq = document.getElementById('bueq')
-var men = document.getElementById('bumen')
+const ac = document.getElementById('buac')
+const per = document.getElementById('buper')
+const el = document.getElementById('buel')
+const c = document.getElementById('budel')
+const div = document.getElementById('budiv')
+const mul = document.getElementById('bumul')
+const mas = document.getElementById('bumas')
+const poi = document.getElementById('bupoi')
+const eq = document.getElementById('bueq')
+const men = document.getElementById('bumen')
 
-var botonesOperando = [ac, per, el, c, div, mul, mas, poi, eq, men]
+const botonesOperando = [ac, per, el, c, div, mul, mas, poi, eq, men]
 
 for (var i=0; i<botonesOperando.length; i++){ 
   //console.log(botonesOperando[i].innerHTML,typeof(botonesOperando[i].innerHTML));
