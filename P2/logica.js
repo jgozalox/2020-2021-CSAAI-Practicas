@@ -10,7 +10,7 @@ var segundoNum;
 
 function botonPulsado(a)
 {
-    console.log(this.innerHTML)
+    
     if (isNaN(this.innerHTML)){
       //Pulsacion de operador
       if (tresElem.length == 0){
@@ -18,7 +18,10 @@ function botonPulsado(a)
         console.log("Introduzca primero un numero")
       }else{
         if (this.innerHTML != "="){
-          console.log("operador")
+          if(tresElem.length == 1){
+            tresElem[1] = this.innerHTML;
+            console.log("elem2",tresElem[1])
+          }
         }else{
           console.log("=,realizo operacion")
         }
@@ -26,7 +29,16 @@ function botonPulsado(a)
     }else{
       //Pulsacion de numero
       if(tresElem.length < 2){
-
+        if (tresElem.length = 0){
+          tresElem[0] = this.innerHTML
+          console.log("=,realizo vaefcesdfvcsdefes")
+        }else{
+          tresElem[0] += this.innerHTML
+        }
+        console.log("elem1",tresElem[0])
+      }else if(tresElem.length == 2){
+        tresElem[2] += this.innerHTML;
+        console.log("elem3",tresElem[2])
       }
     }
     //result.innerHTML += this.innerHTML
