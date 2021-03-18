@@ -12,20 +12,20 @@ var result = document.getElementById('result')
 var banderaOnOff = false;
 
 function botonPulsado(a){
-    if (this.innerHTML == "AC"){
+    if (a.target.value == "AC"){
       tresElem = [];
       result.innerHTML = " "
-    }else if(this.innerHTML == "DEL"){
+    }else if(a.target.value == "DEL"){
       console.log("borrar")
-    }else if (isNaN(this.innerHTML) && this.innerHTML != "." ){
+    }else if (isNaN(a.target.value) && a.target.value != "." ){
       //Pulsacion de operador
       if (tresElem.length == 0){
         //No hará nada ya que no hay num (array vacio)
         console.log("Introduzca primero un numero")
       }else{
-        if (this.innerHTML != "="){
+        if (a.target.value != "="){
           if(tresElem.length == 1){
-            tresElem[1] = this.innerHTML;
+            tresElem[1] = a.target.value;
             result.innerHTML += tresElem[1];
             console.log("elem2",tresElem[1])
           }
@@ -91,8 +91,6 @@ function botonPulsado(a){
         console.log("elem3",tresElem[2])
       }
     }
-
-
 }
 
 function encender(){
@@ -107,21 +105,12 @@ function encender(){
   result.innerHTML = " "
 }
 
-
 document.getElementById('onoffbutton').onclick = function(){encender()};
 
+botones = document.getElementsByClassName("boton")
 
-const boton = {
-    numeros : document.getElementsByClassName("digito"),
-    operandos : document.getElementsByClassName("operando")
-}
-
-/*function digito(value){
-    console.log("Valor: " + value)
-}*/
-
-for (let numero of boton.numeros) {
-    numero.onclick = (ev) => {
+for (let boton of botones) {
+    boton.onclick = (ev) => {
         botonPulsado(ev)
     }
 }
