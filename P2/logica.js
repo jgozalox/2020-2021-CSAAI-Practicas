@@ -111,25 +111,10 @@ function encender(){
 
 document.getElementById('onoffbutton').onclick = function(){encender()};
 
-const num0 = document.getElementById('bu0')
-const num1 = document.getElementById('bu1')
-const num2 = document.getElementById('bu2')
-const num3 = document.getElementById('bu3')
-const num4 = document.getElementById('bu4')
-const num5 = document.getElementById('bu5')
-const num6 = document.getElementById('bu6')
-const num7 = document.getElementById('bu7')
-const num8 = document.getElementById('bu8')
-const num9 = document.getElementById('bu9')
 
-const botonesNumero = [num0, num1, num2, num3, num4, num5, num6, num7, num8, num9];
-
-for (var i=0; i<botonesNumero.length; i++){ 
-    //console.log(botonesNumero[i].innerHTML,typeof(botonesNumero[i].innerHTML));
-    botonesNumero[i].addEventListener("click", botonPulsado);
-}
 
 const gui = {
+  //Operandos
   ac:  document.getElementById('buac'),
   per:document.getElementById('buper'),
   el: document.getElementById('buel'),
@@ -140,24 +125,31 @@ const gui = {
   poi : document.getElementById('bupoi'),
   eq : document.getElementById('bueq'),
   men : document.getElementById('bumen'),
+  //Numeros
+  num0 : document.getElementById('bu0'),
+  num1 : document.getElementById('bu1'),
+  num2 : document.getElementById('bu2'),
+  num3 : document.getElementById('bu3'),
+  num4 : document.getElementById('bu4'),
+  num5 : document.getElementById('bu5'),
+  num6 : document.getElementById('bu6'),
+  num7 : document.getElementById('bu7'),
+  num8 : document.getElementById('bu8'),
+  num9 : document.getElementById('bu9')
+
   
 }
-/*const ac = document.getElementById('buac')
-const per = document.getElementById('buper')
-const el = document.getElementById('buel')
-const c = document.getElementById('budel')
-const div = document.getElementById('budiv')
-const mul = document.getElementById('bumul')
-const mas = document.getElementById('bumas')
-const poi = document.getElementById('bupoi')
-const eq = document.getElementById('bueq')
-const men = document.getElementById('bumen')*/
-
+const botonesNumero = [gui.num0, gui.num1, gui.num2, gui.num3, gui.num4, gui.num5, gui.num6, gui.num7, gui.num8, gui.num9];
 const botonesOperando = [gui.ac, gui.per, gui.el, gui.c, gui.div, gui.mul, gui.mas, gui.poi, gui.eq, gui.men]
 
 for (var i=0; i<botonesOperando.length; i++){ 
   //console.log(botonesOperando[i].innerHTML,typeof(botonesOperando[i].innerHTML));
   botonesOperando[i].addEventListener("click", botonPulsado);
+}
+
+for (var i=0; i<botonesNumero.length; i++){ 
+  //console.log(botonesNumero[i].innerHTML,typeof(botonesNumero[i].innerHTML));
+  botonesNumero[i].addEventListener("click", botonPulsado);
 }
 
 //Otra forma de hacer el bucle for

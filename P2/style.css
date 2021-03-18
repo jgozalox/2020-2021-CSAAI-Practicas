@@ -11,6 +11,7 @@
     font-weight: bold;
     background-color: black;
     border-radius: 7px;
+    word-break: break-all;
 }
 body{
     background-color: cornflowerblue;
