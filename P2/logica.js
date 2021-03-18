@@ -129,7 +129,20 @@ for (var i=0; i<botonesNumero.length; i++){
     botonesNumero[i].addEventListener("click", botonPulsado);
 }
 
-const ac = document.getElementById('buac')
+const gui = {
+  ac:  document.getElementById('buac'),
+  per:document.getElementById('buper'),
+  el: document.getElementById('buel'),
+  c: document.getElementById('budel'),
+  div: document.getElementById('budiv'),
+  mul : document.getElementById('bumul'),
+  mas : document.getElementById('bumas'),
+  poi : document.getElementById('bupoi'),
+  eq : document.getElementById('bueq'),
+  men : document.getElementById('bumen'),
+  
+}
+/*const ac = document.getElementById('buac')
 const per = document.getElementById('buper')
 const el = document.getElementById('buel')
 const c = document.getElementById('budel')
@@ -138,9 +151,9 @@ const mul = document.getElementById('bumul')
 const mas = document.getElementById('bumas')
 const poi = document.getElementById('bupoi')
 const eq = document.getElementById('bueq')
-const men = document.getElementById('bumen')
+const men = document.getElementById('bumen')*/
 
-const botonesOperando = [ac, per, el, c, div, mul, mas, poi, eq, men]
+const botonesOperando = [gui.ac, gui.per, gui.el, gui.c, gui.div, gui.mul, gui.mas, gui.poi, gui.eq, gui.men]
 
 for (var i=0; i<botonesOperando.length; i++){ 
   //console.log(botonesOperando[i].innerHTML,typeof(botonesOperando[i].innerHTML));
