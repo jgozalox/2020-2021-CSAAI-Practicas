@@ -67,19 +67,12 @@ function updateSquare()
 }
 
 let step = 20
-document.onkeydown = function (ev) {
-  var step = new Number(document.getElementById("step").value);
-     switch (ev.keycode) {
-      case 32: // Espacio (32 para mi )
-      console.log("heeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee")
-      break;
-     }
-}
 
-document.getElementById("demo").addEventListener("keydown", myFunction);
+
+document.addEventListener("keydown", myFunction);
 
 function myFunction() {
-  document.getElementById("demo").style.backgroundColor = "red";
+  console.log("prueba")
 }
 
 //-- ¡Que empiece la función!
