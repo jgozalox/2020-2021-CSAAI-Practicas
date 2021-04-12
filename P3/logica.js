@@ -31,28 +31,28 @@ function movimiento()
   if (enJuego == true){
     x = x + velx;
     y = y + vely;
+
+    if (x < 0 || x >= (canvas.width - 10) ) {
+      velx = -velx;
+    }
+  
+    if (y < 0) {
+      vely = -vely;
+    }
+
+    if(y >= (canvas.height - 10)){
+      x = 0;
+      y = 0;
+      velx = 6;
+      vely = 2;
+      document.getElementById("start").innerHTML = "START";
+      enJuego = false;
+    }
+
   }
 
-
-  if (x < 0 || x >= (canvas.width - 10) ) {
-    velx = -velx;
-  }
-
-  if (y < 0) {
-    vely = -vely;
-  }
-
-  if(y >= (canvas.height - 10)){
-    x = 0;
-    y = 0;
-    document.getElementById("start").innerHTML = "START";
-    enJuego = false;
-  }
-
-
-
-
-  requestAnimationFrame(movimiento);
+  //requestAnimationFrame(movimiento);
+  document.getElementById("start").addEventListener("click", movimiento);
 }
 
 function dibujo() 
