@@ -4,7 +4,7 @@ const canvas = document.getElementById("canvas");
 
 //-- Definir el tamaño del canvas
 canvas.width = 300;
-canvas.height = 400;
+canvas.height = 100;
 
 //-- Obtener el contexto del canvas
 const ctx = canvas.getContext("2d");
@@ -53,6 +53,7 @@ function movimiento()
 
   //requestAnimationFrame(movimiento);
   document.getElementById("start").addEventListener("click", movimiento);
+  console.log("vel x = ",velx," vel y=",vely)
 }
 
 function dibujo() 
