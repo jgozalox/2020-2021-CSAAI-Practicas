@@ -18,7 +18,7 @@ let velx = 3;
 let vely = 1;
 
 //-- Funcion principal de animacion
-function update() 
+function updateSquare() 
 {
   console.log("test");
   //-- Algoritmo de animacion:
@@ -62,55 +62,25 @@ function update()
   x = x + velx;
   y = y + vely;
 
-  //-- 4) Volver a ejecutar update cuando toque
-  requestAnimationFrame(update);
+  //-- 4) Volver a ejecutar updateSquare cuando toque
+  requestAnimationFrame(updateSquare);
 }
 
+let step = 20
 document.onkeydown = function (ev) {
   var step = new Number(document.getElementById("step").value);
-     switch (ev.keyCode) {
-        case 37: // Left (37 para mi )
-           movX -= step;
-           break;
-
-        case 39: // Right (39 para mi )
-           movX += step;
-           break;
-
-        case 38: // Up (38 para mi )
-           movY += step;
-           break;
-
-        case 40: // Down (40 para mi )
-           movY -= step;
-           break;
-
-        case 33: // Intro (13 para mi )
-           escala += step;
-           break;
-
-        case 34: // Espacio (32 para mi )
-           escala -= step;
-           break;
-
-        case 35: // tecla "d" (68 para mi )
-           rotacion -= step;
-           break;
-
-        case 36: // tecla "i" (73 para mi )
-           rotacion += step;
-           break;
-
-         case 187: // tecla "+"  (187 para mi )
-           aproximacion += step;
-           break;
-         case 189: // tecla "-"  (189 para mi PC)
-           aproximacion -= step;
-           break;
-
+     switch (ev.keycode) {
+      case 32: // Espacio (32 para mi )
+      console.log("heeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee")
+      break;
      }
-drawScene();
+}
+
+document.getElementById("demo").addEventListener("keydown", myFunction);
+
+function myFunction() {
+  document.getElementById("demo").style.backgroundColor = "red";
 }
 
 //-- ¡Que empiece la función!
-update();
+updateSquare();
