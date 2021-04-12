@@ -20,41 +20,21 @@ let vely = 1;
 //-- Funcion principal de animacion
 function updateSquare() 
 {
-  console.log("test");
-  //-- Algoritmo de animacion:
-  //-- 1) Actualizar posicion del  elemento
-  //-- (física del movimiento rectilineo uniforme)
-
-   //-- Condicion de rebote en extremos verticales del canvas
    if (x < 0 || x >= (canvas.width - 10) ) {
     velx = -velx;
   }
 
-  //-- Condición de rebote en extremos horizontales del canvas
   if (y < 0 || y > (canvas.height - 10)) {
     vely = -vely;
   }
 
-
-
   console.log(x);
   console.log(y);
-
-  //-- 2) Borrar el canvas
   ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-  //-- 3) Dibujar los elementos visibles
   ctx.beginPath();
     ctx.rect(x, y, 10, 10);
-
-    
-
     ctx.fillStyle = 'white';
-
-    //-- Rellenar
     ctx.fill();
-
-    //-- Dibujar el trazo
     ctx.stroke()
   ctx.closePath();
 
@@ -69,11 +49,15 @@ function updateSquare()
 let step = 20
 
 
-document.addEventListener("keydown", myFunction);
+//document.addEventListener("keydown", myFunction);
+
+//function myFunction() {
+  //console.log("prueba")
+//}
+
+document.getElementById("start").addEventListener("click", myFunction);
 
 function myFunction() {
-  console.log("prueba")
+  document.getElementById("start").innerHTML = "EN MARCHA!";
+  updateSquare();
 }
-
-//-- ¡Que empiece la función!
-updateSquare();
