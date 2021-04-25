@@ -9,11 +9,15 @@ canvas.height = 400;
 //-- Obtener el contexto del canvas
 const ctx = canvas.getContext("2d");
 
-let x = 0;
-let y = 0;
+let x = canvas.width/2;
+let y = canvas.height - (1/8)*canvas.height;
+
+let inicialX = x;
+let inicialY = y;
 
 let velx = 6;
 let vely = 2;
+
 
 function dibujo() 
 {
@@ -27,6 +31,7 @@ function dibujo()
 }
 dibujo();
 
+
 function movimiento() 
 {
 
@@ -39,36 +44,28 @@ function movimiento()
   }
 
   if(y >= (canvas.height - 10)){
-    x = 0;
-    y = 0;
+    x = inicialX; 
+    y = inicialY;
+    cancelAnimationFrame(myRequest);
     dibujo();
+    document.getElementById("start").innerHTML = "START!";
     return;
   }  
 
-    
-  x = x + velx;
-  y = y + vely;
-
-
-  requestAnimationFrame(movimiento);
+  x = x - velx;
+  y = y - vely;
   
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-  ctx.beginPath();
-    ctx.rect(x, y, 10, 10);
-    ctx.fillStyle = 'white';
-    ctx.fill();
-    ctx.stroke()
-  ctx.closePath();
+  dibujo();
   
-  
+ myRequest = requestAnimationFrame(movimiento);
 }
+
 
 function myFunction() {
   document.getElementById("start").innerHTML = "EN MARCHA!";
   movimiento();
+
 }
-
-
 
 
 document.getElementById("start").addEventListener("click", myFunction);
