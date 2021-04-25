@@ -58,6 +58,8 @@ function movimiento()
   if(y >= (canvas.height - 10)){
     x = inicialX; 
     y = inicialY;
+    velx = -velx;
+    vely = -vely;
     cancelAnimationFrame(myRequest);
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     dibujo();
