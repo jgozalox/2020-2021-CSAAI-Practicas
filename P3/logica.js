@@ -31,6 +31,17 @@ function dibujo()
 }
 dibujo();
 
+function dibujoRaquet() 
+{
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  ctx.beginPath();
+    ctx.rect(x-40, y, 40, 10);
+    ctx.fillStyle = 'white';
+    ctx.fill();
+    ctx.stroke()
+  ctx.closePath();
+}
+dibujoRaquet();
 
 function movimiento() 
 {
