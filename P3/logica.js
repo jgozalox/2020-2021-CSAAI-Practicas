@@ -100,7 +100,9 @@ window.addEventListener("keydown", function(event) {
 
     case "KeyD":
     case "ArrowRight":
-      angle += turnRate;
+      if (xrac < canvas.width - 20){
+        xrac += 10;
+      }
       break;
   }
   event.preventDefault();
