@@ -79,19 +79,12 @@ function movimiento()
 }
 
 
-
-function myFunction() {
-  document.getElementById("start").innerHTML = "EN MARCHA!";
-  movimiento();
-
-}
-
 document.getElementById("start").addEventListener("click", myFunction);
 
 document.onkeydown = function (ev) {
      switch (ev.keyCode) {
         case 32:
-           console.log("eee");
+           movimiento();
            break;
         case 37:
           if (xrac > 20){
