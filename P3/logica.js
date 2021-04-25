@@ -86,24 +86,26 @@ function myFunction() {
 
 document.getElementById("start").addEventListener("click", myFunction);
 
-window.addEventListener("keydown", function(event) {
-  if (event.defaultPrevented) {
-    return; // Do nothing if event already handled
-  }
+document.onkeydown = function (ev) {
+     switch (ev.keyCode) {
+        case 32:
+           console.log("eee");
+           break;
+        case 37:
+          if (xrac > 20){
+            xrac -= 10;
+          }
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+          dibujoRaquet();
+          break;
+        case 39:
+          if (xrac < canvas.width - 20){
+            xrac += 10;
+          }
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+          dibujoRaquet();
+          break;
+        
+     }
 
-  switch(event.code) {
-    case "ArrowLeft":
-      if (xrac > 20){
-        xrac -= 10;
-      }
-      break;
-
-    case "KeyD":
-    case "ArrowRight":
-      if (xrac < canvas.width - 20){
-        xrac += 10;
-      }
-      break;
-  }
-  event.preventDefault();
-}, true);
+}
