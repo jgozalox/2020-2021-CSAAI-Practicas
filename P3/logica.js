@@ -12,6 +12,9 @@ const ctx = canvas.getContext("2d");
 let x = canvas.width/2;
 let y = canvas.height - (1/8)*canvas.height;
 
+let xrac = canvas.width/2;
+let yrac = canvas.height - (1/8)*canvas.height;
+
 let inicialX = x;
 let inicialY = y;
 
@@ -21,10 +24,9 @@ let vely = 2;
 
 function dibujo() 
 {
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
   ctx.beginPath();
     ctx.rect(x, y, 10, 10);
-    ctx.fillStyle = 'white';
+    ctx.fillStyle = 'red';
     ctx.fill();
     ctx.stroke()
   ctx.closePath();
@@ -33,9 +35,8 @@ dibujo();
 
 function dibujoRaquet() 
 {
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
   ctx.beginPath();
-    ctx.rect(x-40, y, 40, 10);
+    ctx.rect(xrac-20, yrac, 40, 10);
     ctx.fillStyle = 'white';
     ctx.fill();
     ctx.stroke()
@@ -58,7 +59,9 @@ function movimiento()
     x = inicialX; 
     y = inicialY;
     cancelAnimationFrame(myRequest);
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
     dibujo();
+    dibujoRaquet();
     document.getElementById("start").innerHTML = "START!";
     return;
   }  
@@ -66,10 +69,13 @@ function movimiento()
   x = x - velx;
   y = y - vely;
   
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
   dibujo();
+  dibujoRaquet();
   
  myRequest = requestAnimationFrame(movimiento);
 }
+
 
 
 function myFunction() {
@@ -78,6 +84,24 @@ function myFunction() {
 
 }
 
-
 document.getElementById("start").addEventListener("click", myFunction);
 
+window.addEventListener("keydown", function(event) {
+  if (event.defaultPrevented) {
+    return; // Do nothing if event already handled
+  }
+
+  switch(event.code) {
+    case "ArrowLeft":
+      if (xrac > 20){
+        xrac -= 10;
+      }
+      break;
+
+    case "KeyD":
+    case "ArrowRight":
+      angle += turnRate;
+      break;
+  }
+  event.preventDefault();
+}, true);
