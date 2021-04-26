@@ -9,8 +9,8 @@ canvas.height = 400;
 //-- Obtener el contexto del canvas
 const ctx = canvas.getContext("2d");
 
-let x = canvas.width/2;
-let y = canvas.height - (1/8)*canvas.height;
+let x = canvas.width/2 - 5;
+let y = canvas.height - (1/8)*canvas.height - 10;
 
 let xrac = canvas.width/2;
 let yrac = canvas.height - (1/8)*canvas.height;
@@ -46,16 +46,18 @@ dibujoRaquet();
 
 function movimiento() 
 {
-
-  if (x < 0 || x >= (canvas.width - 10) ) {
-    velx = -velx;
-  }
-    
-  if (y < 0) {
-    vely = -vely;
-  }
-
-  if(y >= (canvas.height - 10)){
+  if (y < yrac-10){
+    if (x < 0 || x >= (canvas.width - 10) ) {
+      velx = -velx;
+    } 
+    if (y < 0) {
+      vely = -vely;
+    }
+  }else if(y = yrac -10){
+    if(x >= xrac && x <= xrac + 40){
+      vely = -vely;
+    }
+  }else{
     x = inicialX; 
     y = inicialY;
     velx = -velx;
@@ -79,28 +81,29 @@ function movimiento()
 }
 
 
-document.getElementById("start").addEventListener("click", myFunction);
-
 document.onkeydown = function (ev) {
      switch (ev.keyCode) {
         case 32:
-           movimiento();
-           break;
+          movimiento();
+          break;
         case 37:
           if (xrac > 20){
-            xrac -= 10;
+            xrac -= 20;
           }
           ctx.clearRect(0, 0, canvas.width, canvas.height);
           dibujoRaquet();
           break;
         case 39:
           if (xrac < canvas.width - 20){
-            xrac += 10;
+            xrac += 20;
           }
           ctx.clearRect(0, 0, canvas.width, canvas.height);
           dibujoRaquet();
           break;
-        
      }
 
 }
+
+
+
+
