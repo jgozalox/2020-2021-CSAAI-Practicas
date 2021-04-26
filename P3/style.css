@@ -2,10 +2,29 @@
   Lo bordeamos con una línea negra y le damos fondo
   azul para distinguirlo
 */
+body{
+  background-color: black;
+}
+
+#title{
+  color: white;
+  font-size: 60px;
+  font-weight: bold;
+  font-family: monaco,Consolas,Lucida Console,monospace; 
+  text-align: center;
+}
 
 canvas {
     background-color: black;
     border-style: solid;
     border-width: 1px;
-    border-color: white;
-  }
+    border: 1px solid white;
+}
+
+.canvas-container {
+    margin-top: -20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: white;
+}

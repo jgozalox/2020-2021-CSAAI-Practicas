@@ -30,7 +30,8 @@ function dibujo()
 {
   ctx.beginPath();
     ctx.rect(x, y, 10, 10);
-    ctx.fillStyle = 'red';
+    //ctx.arc(x, y, 5, 0, 2 * Math.PI);
+    ctx.fillStyle = 'white';
     ctx.fill();
     ctx.stroke()
   ctx.closePath();
@@ -48,11 +49,19 @@ function dibujoRaquet()
 }
 dibujoRaquet();
 
+function doThings() {
+  document.getElementById("canvas").style.border = "thin solid #ffffff";
+}
+
+
+
 function movimiento() 
 {
   if (y < yrac-10){
-    if (x < 0 || x >= (canvas.width - 10) ) {
+    if (x <= 0 || x >= (canvas.width - 10) ) {
       velx = -velx;
+      document.getElementById("canvas").style.border = "thin solid #ff0000";
+      setInterval(doThings,120);
     } 
     if (y < 0) {
       vely = -vely;
