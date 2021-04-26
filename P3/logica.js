@@ -49,28 +49,36 @@ function dibujoRaquet()
 }
 dibujoRaquet();
 
-function doThings() {
+function cssIni() {
   document.getElementById("canvas").style.border = "thin solid #ffffff";
 }
 
-
+function randomColor() {
+  var num =  Math.random() * (max - min) + min
+  let lista = ["10px solid #ff0000", "10px solid #00ff00","10px solid #0000ff"]
+  return lista[num];
+}
 
 function movimiento() 
 {
   if (y < yrac-10){
     if (x <= 0 || x >= (canvas.width - 10) ) {
       velx = -velx;
-      document.getElementById("canvas").style.border = "thin solid #ff0000";
-      setInterval(doThings,120);
+      if (x <= 0){
+        document.getElementById("canvas").style.borderLeft = randomColor;
+      }else if (x >= (canvas.width - 10)){
+        document.getElementById("canvas").style.borderRight = randomColor;
+      }
+      
     } 
     if (y < 0) {
       vely = -vely;
+      document.getElementById("canvas").style.borderTop = randomColor;
     }
+    setInterval(cssIni,120);
 
   }else if(y = yrac -10){
     if(( x >= (xrac - 20)) && (x <= (xrac + 20))){
-      console.log("xrac",xrac);
-      console.log("x",x);
       vely = -vely;
     }else{
       enjuego = false;
