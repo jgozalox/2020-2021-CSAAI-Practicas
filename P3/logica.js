@@ -31,6 +31,13 @@ let vely = 2;
 
 var enjuego = false;
 
+function dibujoTitulo() 
+{
+  var img = document.getElementById("imagenBreakout");
+  ctxImg.drawImage(img, 70, 10);
+}
+dibujoTitulo();
+
 
 function dibujo() 
 {

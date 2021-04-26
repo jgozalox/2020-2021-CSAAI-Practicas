@@ -3,7 +3,11 @@
   azul para distinguirlo
 */
 body{
-  /* background-color: black;*/
+  background-color: black;
+}
+
+#imagenBreakout {
+  display: none;
 }
 
 #title{
@@ -27,7 +31,7 @@ body{
 }
 
 .canvas-container {
-    margin-top: -20px;
+    margin-top: -35px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -35,8 +39,8 @@ body{
 }
 
 .canvas-container2 {
-    color: white;
+    margin-top: 10px;
     display: flex;
-    align-items: right;
-    justify-content: right;
+    align-items: center;
+    justify-content: center;
 }
