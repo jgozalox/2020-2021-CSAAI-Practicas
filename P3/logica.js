@@ -28,7 +28,7 @@ let tamXrac = 60;
 let tamYrac = 10;
 
 var enjuego = false;
-
+var numVidas =  document.getElementById("numVidas").innerHTML;
 
 function dibujo() 
 {
@@ -69,7 +69,6 @@ function randomColor() {
                "10px solid #00ffff",
                "10px solid #ff8000"];
   var num =  Math.round(Math.random() * ((lista.length-1)));
-  console.log(num)
   return lista[num];
 }
 
@@ -98,6 +97,13 @@ function movimiento()
       document.getElementById("fondo").style.backgroundColor ="#ff0000";
       setInterval(cssIniBG,250);
       enjuego = false;
+      
+      if(numVidas > 0){
+        numVidas =  String(parseInt(numVidas)-1) ;
+        document.getElementById("numVidas").innerHTML = numVidas;
+      }else{
+        document.getElementById("numVidas").innerHTML = "NO HAY VIDAS ESTO NO CUENTA";
+      }
       x = inicialX; 
       y = inicialY;
       xrac = inicialXrac;
