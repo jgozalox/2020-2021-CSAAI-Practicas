@@ -24,6 +24,9 @@ let inicialYrac = yrac;
 let velx = 6;
 let vely = 2;
 
+let tamXrac = 60;
+let tamYrac = 10;
+
 var enjuego = false;
 
 
@@ -31,7 +34,6 @@ function dibujo()
 {
   ctx.beginPath();
     ctx.rect(x, y, 10, 10);
-    //ctx.arc(x, y, 5, 0, 2 * Math.PI);
     ctx.fillStyle = 'white';
     ctx.fill();
     ctx.stroke()
@@ -42,7 +44,7 @@ dibujo();
 function dibujoRaquet() 
 {
   ctx.beginPath();
-    ctx.rect(xrac-20, yrac, 40, 10);
+    ctx.rect(xrac-30, yrac, tamXrac, tamYrac);
     ctx.fillStyle = 'white';
     ctx.fill();
     ctx.stroke()
@@ -52,6 +54,10 @@ dibujoRaquet();
 
 function cssIni() {
   document.getElementById("canvas").style.border = "thin solid #ffffff";
+}
+
+function cssIniBG() {
+  document.getElementById("fondo").style.backgroundColor ="#000000";
 }
 
 function randomColor() {
@@ -86,10 +92,11 @@ function movimiento()
     setInterval(cssIni,120);
 
   }else if(y = yrac -10){
-    if(( x >= (xrac - 20)) && (x <= (xrac + 20))){
+    if(( x >= (xrac - tamXrac/2)) && (x <= (xrac + tamXrac/2))){
       vely = -vely;
     }else{
       document.getElementById("fondo").style.backgroundColor ="#ff0000";
+      setInterval(cssIniBG,250);
       enjuego = false;
       x = inicialX; 
       y = inicialY;
@@ -123,14 +130,14 @@ document.onkeydown = function (ev) {
           enjuego = true;
           break;
         case 37:
-          if ((xrac > 20) && (enjuego == true)){
+          if ((xrac > tamXrac/2) && (enjuego == true)){
             xrac -= 10;
             ctx.clearRect(0, 0, canvas.width, canvas.height);
           }
           dibujoRaquet();
           break;
         case 39:
-          if ((xrac < canvas.width - 20) && (enjuego == true)){
+          if ((xrac < canvas.width - tamXrac/2) && (enjuego == true)){
             xrac += 10;
             ctx.clearRect(0, 0, canvas.width, canvas.height);
           }
