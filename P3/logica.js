@@ -7,13 +7,9 @@ const canvasImg = document.getElementById("canvasImg");
 canvas.width = 300;
 canvas.height = 400;
 
-canvasImg.width = 800;
-canvasImg.height = 200;
-
 
 //-- Obtener el contexto de los canvas
 const ctx = canvas.getContext("2d");
-const ctxImg = canvasImg.getContext("2d");
 
 let x = canvas.width/2 - 5;
 let y = canvas.height - (1/8)*canvas.height - 10;
@@ -30,13 +26,6 @@ let velx = 6;
 let vely = 2;
 
 var enjuego = false;
-
-function dibujoTitulo() 
-{
-  var img = document.getElementById("imagenBreakout");
-  ctxImg.drawImage(img, 70, 10);
-}
-dibujoTitulo();
 
 
 function dibujo() 
