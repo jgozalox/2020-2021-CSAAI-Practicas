@@ -23,6 +23,8 @@ let inicialYrac = yrac;
 let velx = 6;
 let vely = 2;
 
+var enjuego = false;
+
 
 function dibujo() 
 {
@@ -62,7 +64,7 @@ function movimiento()
       console.log("x",x);
       vely = -vely;
     }else{
-
+      enjuego = false;
       x = inicialX; 
       y = inicialY;
       xrac = inicialXrac;
@@ -92,19 +94,20 @@ document.onkeydown = function (ev) {
      switch (ev.keyCode) {
         case 32:
           movimiento();
+          enjuego = true;
           break;
         case 37:
-          if (xrac > 20){
+          if ((xrac > 20) && (enjuego == true)){
             xrac -= 20;
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
           }
-          ctx.clearRect(0, 0, canvas.width, canvas.height);
           dibujoRaquet();
           break;
         case 39:
-          if (xrac < canvas.width - 20){
+          if ((xrac < canvas.width - 20) && (enjuego == true)){
             xrac += 20;
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
           }
-          ctx.clearRect(0, 0, canvas.width, canvas.height);
           dibujoRaquet();
           break;
      }
