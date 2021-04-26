@@ -1,7 +1,6 @@
 console.log("Ejecutando JS...");
 
 const canvas = document.getElementById("canvas");
-const canvasImg = document.getElementById("canvasImg");
 
 //-- Definir el tamaño de los canvas
 canvas.width = 300;
@@ -90,6 +89,7 @@ function movimiento()
     if(( x >= (xrac - 20)) && (x <= (xrac + 20))){
       vely = -vely;
     }else{
+      document.getElementById("fondo").style.backgroundColor ="#ff0000";
       enjuego = false;
       x = inicialX; 
       y = inicialY;
@@ -124,14 +124,14 @@ document.onkeydown = function (ev) {
           break;
         case 37:
           if ((xrac > 20) && (enjuego == true)){
-            xrac -= 20;
+            xrac -= 10;
             ctx.clearRect(0, 0, canvas.width, canvas.height);
           }
           dibujoRaquet();
           break;
         case 39:
           if ((xrac < canvas.width - 20) && (enjuego == true)){
-            xrac += 20;
+            xrac += 10;
             ctx.clearRect(0, 0, canvas.width, canvas.height);
           }
           dibujoRaquet();
