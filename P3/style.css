@@ -28,3 +28,10 @@ canvas {
     justify-content: center;
     border: white;
 }
+
+.canvas-container2 {
+    color: white;
+    display: flex;
+    align-items: right;
+    justify-content: right;
+}
