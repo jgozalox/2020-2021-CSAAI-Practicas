@@ -3,7 +3,7 @@
   azul para distinguirlo
 */
 body{
-  background-color: black;
+  /* background-color: black;*/
 }
 
 #title{
@@ -14,11 +14,16 @@ body{
   text-align: center;
 }
 
-canvas {
+#canvas {
     background-color: black;
     border-style: solid;
-    border-width: 1px;
     border: 2px solid white;
+    margin-top: 20px;
+    }
+
+#canvasImg {
+  background-color: black;
+  border-style: solid;
 }
 
 .canvas-container {
