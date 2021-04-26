@@ -54,8 +54,15 @@ function cssIni() {
 }
 
 function randomColor() {
-  var num =  Math.random() * (max - min) + min
-  let lista = ["10px solid #ff0000", "10px solid #00ff00","10px solid #0000ff"]
+  let lista = ["10px solid #ff0000", 
+               "10px solid #00ff00",
+               "10px solid #0000ff", 
+               "10px solid #ffff00",
+               "10px solid #ff00ff", 
+               "10px solid #00ffff",
+               "10px solid #ff8000"];
+  var num =  Math.round(Math.random() * ((lista.length-1)));
+  console.log(num)
   return lista[num];
 }
 
@@ -65,15 +72,15 @@ function movimiento()
     if (x <= 0 || x >= (canvas.width - 10) ) {
       velx = -velx;
       if (x <= 0){
-        document.getElementById("canvas").style.borderLeft = randomColor;
+        document.getElementById("canvas").style.borderLeft = randomColor();
       }else if (x >= (canvas.width - 10)){
-        document.getElementById("canvas").style.borderRight = randomColor;
+        document.getElementById("canvas").style.borderRight = randomColor();
       }
       
     } 
     if (y < 0) {
       vely = -vely;
-      document.getElementById("canvas").style.borderTop = randomColor;
+      document.getElementById("canvas").style.borderTop = randomColor();
     }
     setInterval(cssIni,120);
 
