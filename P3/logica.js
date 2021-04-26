@@ -17,6 +17,8 @@ let yrac = canvas.height - (1/8)*canvas.height;
 
 let inicialX = x;
 let inicialY = y;
+let inicialXrac = xrac;
+let inicialYrac = yrac;
 
 let velx = 6;
 let vely = 2;
@@ -53,22 +55,27 @@ function movimiento()
     if (y < 0) {
       vely = -vely;
     }
+
   }else if(y = yrac -10){
-    if(x >= xrac && x <= xrac + 40){
+    if(( x >= (xrac - 20)) && (x <= (xrac + 20))){
+      console.log("xrac",xrac);
+      console.log("x",x);
       vely = -vely;
+    }else{
+
+      x = inicialX; 
+      y = inicialY;
+      xrac = inicialXrac;
+      yrac = inicialYrac;
+      velx = -velx;
+      vely = -vely;
+      cancelAnimationFrame(myRequest);
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      dibujo();
+      dibujoRaquet();
+      return;
     }
-  }else{
-    x = inicialX; 
-    y = inicialY;
-    velx = -velx;
-    vely = -vely;
-    cancelAnimationFrame(myRequest);
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    dibujo();
-    dibujoRaquet();
-    document.getElementById("start").innerHTML = "START!";
-    return;
-  }  
+  }
 
   x = x - velx;
   y = y - vely;
@@ -77,7 +84,7 @@ function movimiento()
   dibujo();
   dibujoRaquet();
   
- myRequest = requestAnimationFrame(movimiento);
+  myRequest = requestAnimationFrame(movimiento);
 }
 
 
