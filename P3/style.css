@@ -9,38 +9,24 @@ body{
   font-weight: bold;
   font-family: monaco,Consolas,Lucida Console,monospace; 
   text-align: center;
-}
-
-#canvas {
-    background-color: black;
-    border-style: solid;
-    border: 2px solid white;
-    margin-top: 20px;
-    }
-
-#canvasImg {
-  background-color: black;
-  border-style: solid;
-}
-
-#datosPartida{
   display: flex;
   align-items: left;
   justify-content: left;
-  border: white;
-  padding: 30px;
 }
 
-.canvas-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: white;
+#canvas {
+    border: 2px solid white;
 }
 
-.canvas-container2 {
-    margin-top: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+
+#main {
+  width: 90%;
+  height: 90%;
+  display: flex;
 }
+
+#main div {
+  -ms-flex: 3;  /* IE 10 */  
+  flex: 3;
+}
+
