@@ -146,23 +146,11 @@ function movimiento()
     for (let i = 0; i < LADRILLO.F; i++) {
       for (let j = 0; j < LADRILLO.C; j++) {
         if (ladrillos[i][j].visible) {
-          
-          if ((y == ladrillos[i][j].y) || (y == (ladrillos[i][j].y + 15))){
-            console.log("Ejecsfsfsdfsdfsdfsdfsfsdutando JS...");
+          if ((y >= ladrillos[i][j].y) && (y <= (ladrillos[i][j].y + 15))){
             if ((x >= ladrillos[i][j].x) && (x <= (ladrillos[i][j].x + 35))){
               ladrillos[i][j].visible = false;
-              
               puntos +=  1;
               vely = -vely;
-              document.getElementById("puntos").innerHTML = puntos;
-            }
-          }
-          if((y >= ladrillos[i][j].y) && (y <= (ladrillos[i][j].y + 15))){
-            if ((x == ladrillos[i][j].x) || (x == (ladrillos[i][j].x + 35))){
-              ladrillos[i][j].visible = false;
-              console.log("sfdfsdfsdfsdf");
-              puntos +=  1 ;
-              velx = -velx;
               document.getElementById("puntos").innerHTML = puntos;
             }
           }
@@ -194,8 +182,6 @@ function movimiento()
       y = inicialY;
       xrac = inicialXrac;
       yrac = inicialYrac;
-      velx = -velx;
-      vely = -vely;
       cancelAnimationFrame(myRequest);
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       dibujo();
