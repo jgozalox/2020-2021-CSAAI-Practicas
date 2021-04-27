@@ -140,7 +140,18 @@ function movimiento()
     }
     setInterval(cssIni,120);
 
-    
+    for (let i = 0; i < LADRILLO.F; i++) {
+      for (let j = 0; j < LADRILLO.C; j++) {
+        if (ladrillos[i][j].visible) {
+          if ((y >= ladrillos[i][j].y) && (y <= (ladrillos[i][j].y + 15))){
+            if ((x >= ladrillos[i][j].x) && (x <= (ladrillos[i][j].x + 35))){
+              ladrillos[i][j].visible = false;
+              vely = -vely;
+            }
+          }
+        }
+      }
+    }
 
   }else if(y = yrac -10){
     if(( x >= (xrac - tamXrac/2)) && (x <= (xrac + tamXrac/2))){
