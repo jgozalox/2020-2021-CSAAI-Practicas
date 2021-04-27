@@ -166,18 +166,18 @@ function movimiento()
       setInterval(cssIniBG,250);
       enjuego = false;
       
-      if(numVidas > 0){
-        numVidas = numVidas - 1 ;
-        if (numVidas == 2){
-          document.getElementById("numVidas").innerHTML = "| |";
-        }
-        if (numVidas == 1){
-          document.getElementById("numVidas").innerHTML = "|";
-        }
+      numVidas -= 1 ;
+      if (numVidas == 2){
+        document.getElementById("numVidas").innerHTML = "| |";
+      }else if (numVidas == 1){
+        document.getElementById("numVidas").innerHTML = "|";
       }else{
         document.getElementById("vidasLet").innerHTML = "GAME ";
         document.getElementById("numVidas").innerHTML = " OVER";
+        document.getElementById("canvas").style.display = "none";
+        return; 
       }
+      
       x = inicialX; 
       y = inicialY;
       xrac = inicialXrac;
@@ -206,8 +206,10 @@ function movimiento()
 document.onkeydown = function (ev) {
      switch (ev.keyCode) {
         case 32:
-          movimiento();
-          enjuego = true;
+          if (numVidas > 0){
+            movimiento();
+            enjuego = true;
+          }
           break;
         case 37:
           if ((xrac > tamXrac/2) && (enjuego == true)){
