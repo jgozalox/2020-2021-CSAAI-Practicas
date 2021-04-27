@@ -29,7 +29,7 @@ let tamYrac = 10;
 
 var enjuego = false;
 var numVidas =  document.getElementById("numVidas").innerHTML;
-var puntos =  document.getElementById("puntos").innerHTML;
+var puntos =  parseInt(document.getElementById("puntos").innerHTML);
 
 const LADRILLO = {
   F: 5,   //-- Filas
@@ -148,6 +148,8 @@ function movimiento()
             if ((x >= ladrillos[i][j].x) && (x <= (ladrillos[i][j].x + 35))){
               ladrillos[i][j].visible = false;
               vely = -vely;
+              puntos +=  1 ;
+              document.getElementById("puntos").innerHTML = puntos;
             }
           }
         }
