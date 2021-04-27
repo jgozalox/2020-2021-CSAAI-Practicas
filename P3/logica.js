@@ -1,5 +1,6 @@
 console.log("Ejecutando JS...");
 
+
 var button = document.getElementById("button");
 button.onclick = function() {ocultarBut()};
 
@@ -16,10 +17,10 @@ canvas.height = 450;
 const ctx = canvas.getContext("2d");
 
 let x = canvas.width/2 - 5;
-let y = canvas.height - (1/8)*canvas.height - 10;
+let y = canvas.height - (1/16)*canvas.height - 10;
 
 let xrac = canvas.width/2;
-let yrac = canvas.height - (1/8)*canvas.height;
+let yrac = canvas.height - (1/16)*canvas.height;
 
 let inicialX = x;
 let inicialY = y;
