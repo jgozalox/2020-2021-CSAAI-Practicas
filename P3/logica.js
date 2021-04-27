@@ -29,6 +29,7 @@ let tamYrac = 10;
 
 var enjuego = false;
 var numVidas =  document.getElementById("numVidas").innerHTML;
+var puntos =  document.getElementById("puntos").innerHTML;
 
 const LADRILLO = {
   F: 5,   //-- Filas
@@ -71,7 +72,7 @@ function dibujoLadr(){
       if (ladrillos[i][j].visible) {
         ctx.beginPath();
         ctx.rect(ladrillos[i][j].x, ladrillos[i][j].y, LADRILLO.w, LADRILLO.h);
-        ctx.fillStyle = 'blue';
+        ctx.fillStyle = 'white';
         ctx.fill();
         ctx.closePath();
       }

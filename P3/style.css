@@ -23,6 +23,14 @@ body{
   border-style: solid;
 }
 
+#datosPartida{
+  display: flex;
+  align-items: left;
+  justify-content: left;
+  border: white;
+  padding: 30px;
+}
+
 .canvas-container {
     display: flex;
     align-items: center;
