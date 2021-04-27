@@ -5,13 +5,10 @@ body{
 
 .lets{
   color: white;
-  font-size: 20px;
+  font-size: 60px;
   font-weight: bold;
   font-family: monaco,Consolas,Lucida Console,monospace; 
   text-align: center;
-  display: flex;
-  align-items: left;
-  justify-content: left;
 }
 
 #canvas {
@@ -23,10 +20,11 @@ body{
   width: 90%;
   height: 90%;
   display: flex;
+  margin: 60px;
 }
 
 #main div {
-  -ms-flex: 3;  /* IE 10 */  
+  -ms-flex: 3;  
   flex: 3;
 }
 
