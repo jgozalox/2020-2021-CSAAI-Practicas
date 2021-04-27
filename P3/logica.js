@@ -3,8 +3,8 @@ console.log("Ejecutando JS...");
 const canvas = document.getElementById("canvas");
 
 //-- Definir el tamaño de los canvas
-canvas.width = 300;
-canvas.height = 400;
+canvas.width = 415;
+canvas.height = 450;
 
 
 //-- Obtener el contexto de los canvas
@@ -29,6 +29,56 @@ let tamYrac = 10;
 
 var enjuego = false;
 var numVidas =  document.getElementById("numVidas").innerHTML;
+
+const LADRILLO = {
+  F: 5,   //-- Filas
+  C: 9,   //-- Columnas
+  w: 35,  //-- Anchura
+  h: 15,  //-- Altura
+  padding: 10,  //-- Espacio alrededor del ladrillo
+  visible: true //-- Estado del ladrillo: activo o no
+}
+
+//-- Creación de los ladrillos. La estructura se almacena 
+//-- en el objeto ladrillos, que inicialmente está vacío
+const ladrillos = [];
+
+//-- Recorrer todas las filas. La variable i toma valores de 0 hasta F-1 (número de filas)
+for (let i = 0; i < LADRILLO.F; i++) {
+  ladrillos[i] = [];  //-- Inicializar la fila. Las filas son a su vez Arrays que inicialmente están vacíos
+
+  //-- Recorrer las C columnas de la fila i. La variable j toma valores de 0 hasta C-1 (numero de columnas)
+  for (let j = 0; j < LADRILLO.C; j++) {
+
+    //-- Calcular valores para el ladrillo de la fila i y la columna j
+    //-- Algunos valores son constates. Otros depeden de i y j
+    ladrillos[i][j] = {
+      x: 10 + (LADRILLO.w + LADRILLO.padding) * j,
+      y: 10 + (LADRILLO.h + LADRILLO.padding) * i,
+      w: LADRILLO.w,
+      h: LADRILLO.h,
+      padding: LADRILLO.padding,
+      visible: LADRILLO.visible
+    };
+  }
+}
+
+function dibujoLadr(){
+  for (let i = 0; i < LADRILLO.F; i++) {
+    for (let j = 0; j < LADRILLO.C; j++) {
+
+      //-- Si el ladrillo es visible se pinta
+      if (ladrillos[i][j].visible) {
+        ctx.beginPath();
+        ctx.rect(ladrillos[i][j].x, ladrillos[i][j].y, LADRILLO.w, LADRILLO.h);
+        ctx.fillStyle = 'blue';
+        ctx.fill();
+        ctx.closePath();
+      }
+    }
+  }
+}
+dibujoLadr();
 
 function dibujo() 
 {
@@ -90,6 +140,8 @@ function movimiento()
     }
     setInterval(cssIni,120);
 
+    
+
   }else if(y = yrac -10){
     if(( x >= (xrac - tamXrac/2)) && (x <= (xrac + tamXrac/2))){
       vely = -vely;
@@ -114,6 +166,7 @@ function movimiento()
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       dibujo();
       dibujoRaquet();
+      dibujoLadr();
       return;
     }
   }
@@ -124,6 +177,7 @@ function movimiento()
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   dibujo();
   dibujoRaquet();
+  dibujoLadr();
   
   myRequest = requestAnimationFrame(movimiento);
 }
