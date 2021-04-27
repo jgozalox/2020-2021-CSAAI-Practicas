@@ -28,7 +28,8 @@ let tamXrac = 60;
 let tamYrac = 10;
 
 var enjuego = false;
-var numVidas =  document.getElementById("numVidas").innerHTML;
+var numVidas =  3;
+document.getElementById("numVidas").innerHTML = "| | |"
 var puntos = 0;
 document.getElementById("puntos").innerHTML = "";
 
@@ -166,10 +167,16 @@ function movimiento()
       enjuego = false;
       
       if(numVidas > 0){
-        numVidas =  String(parseInt(numVidas)-1) ;
-        document.getElementById("numVidas").innerHTML = numVidas;
+        numVidas = numVidas - 1 ;
+        if (numVidas == 2){
+          document.getElementById("numVidas").innerHTML = "| |";
+        }
+        if (numVidas == 1){
+          document.getElementById("numVidas").innerHTML = "|";
+        }
       }else{
-        document.getElementById("numVidas").innerHTML = "NO HAY VIDAS ESTO NO CUENTA";
+        document.getElementById("vidasLet").innerHTML = "GAME ";
+        document.getElementById("numVidas").innerHTML = " OVER";
       }
       x = inicialX; 
       y = inicialY;
