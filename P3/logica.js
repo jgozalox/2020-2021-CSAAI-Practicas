@@ -1,13 +1,18 @@
 console.log("Ejecutando JS...");
 
+var button = document.getElementById("button");
+button.onclick = function() {ocultarBut()};
+
+function ocultarBut() {
+  button.visibility = "hidden";
+  document.location.reload(true);
+}
+
 const canvas = document.getElementById("canvas");
 
-//-- Definir el tamaño de los canvas
 canvas.width = 415;
 canvas.height = 450;
 
-
-//-- Obtener el contexto de los canvas
 const ctx = canvas.getContext("2d");
 
 let x = canvas.width/2 - 5;
@@ -34,27 +39,20 @@ var puntos = 0;
 document.getElementById("puntos").innerHTML = "";
 
 const LADRILLO = {
-  F: 5,   //-- Filas
-  C: 9,   //-- Columnas
-  w: 35,  //-- Anchura
-  h: 15,  //-- Altura
-  padding: 10,  //-- Espacio alrededor del ladrillo
-  visible: true //-- Estado del ladrillo: activo o no
+  F: 5,   
+  C: 9,   
+  w: 35, 
+  h: 15,  
+  padding: 10,  
+  visible: true
 }
 
-//-- Creación de los ladrillos. La estructura se almacena 
-//-- en el objeto ladrillos, que inicialmente está vacío
 const ladrillos = [];
 
-//-- Recorrer todas las filas. La variable i toma valores de 0 hasta F-1 (número de filas)
 for (let i = 0; i < LADRILLO.F; i++) {
-  ladrillos[i] = [];  //-- Inicializar la fila. Las filas son a su vez Arrays que inicialmente están vacíos
-
-  //-- Recorrer las C columnas de la fila i. La variable j toma valores de 0 hasta C-1 (numero de columnas)
+  ladrillos[i] = [];  
+  
   for (let j = 0; j < LADRILLO.C; j++) {
-
-    //-- Calcular valores para el ladrillo de la fila i y la columna j
-    //-- Algunos valores son constates. Otros depeden de i y j
     ladrillos[i][j] = {
       x: 10 + (LADRILLO.w + LADRILLO.padding) * j,
       y: 10 + (LADRILLO.h + LADRILLO.padding) * i,
@@ -69,8 +67,6 @@ for (let i = 0; i < LADRILLO.F; i++) {
 function dibujoLadr(){
   for (let i = 0; i < LADRILLO.F; i++) {
     for (let j = 0; j < LADRILLO.C; j++) {
-
-      //-- Si el ladrillo es visible se pinta
       if (ladrillos[i][j].visible) {
         ctx.beginPath();
         ctx.rect(ladrillos[i][j].x, ladrillos[i][j].y, LADRILLO.w, LADRILLO.h);
@@ -175,6 +171,7 @@ function movimiento()
         document.getElementById("vidasLet").innerHTML = "GAME ";
         document.getElementById("numVidas").innerHTML = " OVER";
         document.getElementById("canvas").style.display = "none";
+        button.style.visibility = "visible"
         return; 
       }
       
