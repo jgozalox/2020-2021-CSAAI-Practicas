@@ -21,8 +21,8 @@ let inicialY = y;
 let inicialXrac = xrac;
 let inicialYrac = yrac;
 
-let velx = 6;
-let vely = 2;
+let velx = 4;
+let vely = 1;
 
 let tamXrac = 60;
 let tamYrac = 10;
@@ -146,11 +146,23 @@ function movimiento()
     for (let i = 0; i < LADRILLO.F; i++) {
       for (let j = 0; j < LADRILLO.C; j++) {
         if (ladrillos[i][j].visible) {
-          if ((y >= ladrillos[i][j].y) && (y <= (ladrillos[i][j].y + 15))){
+          
+          if ((y == ladrillos[i][j].y) || (y == (ladrillos[i][j].y + 15))){
+            console.log("Ejecsfsfsdfsdfsdfsdfsfsdutando JS...");
             if ((x >= ladrillos[i][j].x) && (x <= (ladrillos[i][j].x + 35))){
               ladrillos[i][j].visible = false;
+              
+              puntos +=  1;
               vely = -vely;
+              document.getElementById("puntos").innerHTML = puntos;
+            }
+          }
+          if((y >= ladrillos[i][j].y) && (y <= (ladrillos[i][j].y + 15))){
+            if ((x == ladrillos[i][j].x) || (x == (ladrillos[i][j].x + 35))){
+              ladrillos[i][j].visible = false;
+              console.log("sfdfsdfsdfsdf");
               puntos +=  1 ;
+              velx = -velx;
               document.getElementById("puntos").innerHTML = puntos;
             }
           }
@@ -158,7 +170,7 @@ function movimiento()
       }
     }
 
-  }else if(y = yrac -10){
+  }else if(y == yrac -10){
     if(( x >= (xrac - tamXrac/2)) && (x <= (xrac + tamXrac/2))){
       vely = -vely;
     }else{
@@ -193,8 +205,8 @@ function movimiento()
     }
   }
 
-  x = x - velx;
-  y = y - vely;
+  x = x + velx;
+  y = y + vely;
   
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   dibujo();
