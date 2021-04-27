@@ -1,6 +1,5 @@
 console.log("Ejecutando JS...");
 
-
 var button = document.getElementById("button");
 button.onclick = function() {ocultarBut()};
 
