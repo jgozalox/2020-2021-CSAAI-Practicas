@@ -3,7 +3,9 @@ console.log("Ejecutando JS...");
 var button = document.getElementById("button");
 button.onclick = function() {ocultarBut()};
 
-var audio = document.getElementById("myAudio"); 
+var myAudioRaquet = document.getElementById("myAudioRaquet"); 
+var myAudioLadrillo = document.getElementById("myAudioLadrillo"); 
+
           
 function ocultarBut() {
   button.visibility = "hidden";
@@ -147,6 +149,8 @@ function movimiento()
           if ((y >= ladrillos[i][j].y) && (y <= (ladrillos[i][j].y + 15))){
             if ((x >= ladrillos[i][j].x) && (x <= (ladrillos[i][j].x + 35))){
               ladrillos[i][j].visible = false;
+              myAudioLadrillo.play();
+              
               puntos +=  1;
               vely = -vely;
               document.getElementById("puntos").innerHTML = puntos;
@@ -159,8 +163,8 @@ function movimiento()
   }else if(y == yrac -10){
     if(( x >= (xrac - tamXrac/2)) && (x <= (xrac + tamXrac/2))){
       vely = -vely;
-      audio.play(); 
-      audio.pause(); 
+      myAudioRaquet.play(); 
+      myAudioRaquet.pause(); 
     }else{ 
       document.getElementById("fondo").style.backgroundColor ="#ff0000";
       setInterval(cssIniBG,250);
