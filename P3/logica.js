@@ -3,6 +3,8 @@ console.log("Ejecutando JS...");
 var button = document.getElementById("button");
 button.onclick = function() {ocultarBut()};
 
+var audio = document.getElementById("myAudio"); 
+          
 function ocultarBut() {
   button.visibility = "hidden";
   document.location.reload(true);
@@ -157,7 +159,9 @@ function movimiento()
   }else if(y == yrac -10){
     if(( x >= (xrac - tamXrac/2)) && (x <= (xrac + tamXrac/2))){
       vely = -vely;
-    }else{
+      audio.play(); 
+      audio.pause(); 
+    }else{ 
       document.getElementById("fondo").style.backgroundColor ="#ff0000";
       setInterval(cssIniBG,250);
       enjuego = false;
