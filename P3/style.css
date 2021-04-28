@@ -17,6 +17,7 @@ body{
 
 #canvas {
     border: 2px solid white;
+    margin-top: -30px;
 }
 
 .instrucciones{
@@ -28,7 +29,7 @@ body{
   width: 90%;
   height: 90%;
   display: flex;
-  margin: 65px;
+  margin: 55px;
 }
 
 #main div {

@@ -18,7 +18,7 @@ function ocultarBut() {
 const canvas = document.getElementById("canvas");
 
 canvas.width = 415;
-canvas.height = 450;
+canvas.height = 430;
 
 const ctx = canvas.getContext("2d");
 
