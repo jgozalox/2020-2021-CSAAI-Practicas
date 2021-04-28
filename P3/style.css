@@ -71,6 +71,13 @@ body{
   position: relative;
 }
 
+#prevIns{
+  animation-name: side2side;
+  animation-duration: 0.5s;
+  animation-iteration-count: infinite;
+  position: relative;
+}
+
 @keyframes canvasAnimation {
   0%   {top:500px;}
   100% {top:0px;}
@@ -80,3 +87,9 @@ body{
   0%   {top:-400px;}
   100% {top:0px;}
 }
+
+@keyframes side2side {
+  0%   {left:5px;}
+  100% {right:5px;}
+}
+
