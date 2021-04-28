@@ -22,23 +22,17 @@ button.onclick = function() {
 canvas.width = 415;
 canvas.height = 430;
 
-
-
 let x = canvas.width/2 - 5;
 let y = canvas.height - (1/16)*canvas.height - 10;
-
 let xrac = canvas.width/2;
 let yrac = canvas.height - (1/16)*canvas.height;
-
 let inicialX = x;
 let inicialY = y;
 let inicialXrac = xrac;
 let inicialYrac = yrac;
-
 let velx = 6;
 let vely = 2;
-
-let tamXrac = 60;
+let tamXrac = 76;
 let tamYrac = 10;
 
 var enjuego = false;
@@ -50,9 +44,9 @@ document.getElementById("puntos").innerHTML = "";
 const LADRILLO = {
   F: 5,   
   C: 9,   
-  w: 35, 
+  w: 39, 
   h: 15,  
-  padding: 10,  
+  padding: 5.5,  
   visible: true
 }
 

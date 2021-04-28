@@ -5,6 +5,7 @@ body{
   background-position: center center;
   background-size: 1250px 1000px;
   font-family: monaco,Consolas,Lucida Console,monospace;
+  text-shadow: 2px 2px #FF0000;
 }
 
 
@@ -16,14 +17,10 @@ body{
 }
 
 #canvas {
-    border: 2px solid white;
+    border: 1px solid white;
     margin-top: -29px;
 }
 
-.instrucciones{
-  color: white;
-  text-align: center;
-}
 
 #main {
   width: 90%;
@@ -57,7 +54,18 @@ body{
 
 #button:hover {background-color: #cccccc}
 
+.instrucciones{
+  color: white;
+  text-align: center;
+}
 
+#textos{
+  animation-name: example;
+  animation-duration: 2s;
+  position: relative;
+}
 
-
-
+@keyframes example {
+  0%   {top:500px;}
+  100% {top:0px;}
+}
