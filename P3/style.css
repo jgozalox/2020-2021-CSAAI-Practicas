@@ -60,12 +60,23 @@ body{
 }
 
 #textos{
-  animation-name: example;
+  animation-name: canvasAnimation;
   animation-duration: 2s;
   position: relative;
 }
 
-@keyframes example {
+.up2down{
+  animation-name: up2downAnimation;
+  animation-duration: 2s;
+  position: relative;
+}
+
+@keyframes canvasAnimation {
   0%   {top:500px;}
+  100% {top:0px;}
+}
+
+@keyframes up2downAnimation {
+  0%   {top:-400px;}
   100% {top:0px;}
 }
