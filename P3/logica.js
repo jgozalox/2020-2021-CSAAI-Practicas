@@ -1,26 +1,26 @@
 console.log("Ejecutando JS...");
 
-
 var button = document.getElementById("button");
-button.onclick = function() {ocultarBut()};
-
 var myAudioRaquet = document.getElementById("myAudioRaquet"); 
 var myAudioLadrillo = document.getElementById("myAudioLadrillo"); 
 var myAudioPared = document.getElementById("myAudioPared"); 
 var musica = document.getElementById("musica"); 
+const canvas = document.getElementById("canvas");
+const ctx = canvas.getContext("2d");
 
 function ocultarBut() {
   button.visibility = "hidden";
   document.location.reload(true);
 }
 
-
-const canvas = document.getElementById("canvas");
+button.onclick = function() {
+  ocultarBut()
+};
 
 canvas.width = 415;
 canvas.height = 430;
 
-const ctx = canvas.getContext("2d");
+
 
 let x = canvas.width/2 - 5;
 let y = canvas.height - (1/16)*canvas.height - 10;
@@ -168,8 +168,8 @@ function movimiento()
       vely = -vely;
       myAudioRaquet.play(); 
     }else{ 
-      document.getElementById("fondo").style.backgroundColor ="#ff0000";
-      setInterval(cssIniBG,250);
+      document.getElementById("fondo").style.backgroundColor ="#800000";
+      setInterval(cssIniBG,400);
       enjuego = false;
       
       numVidas -= 1 ;
@@ -234,7 +234,3 @@ document.onkeydown = function (ev) {
      }
 
 }
-
-
-
-
