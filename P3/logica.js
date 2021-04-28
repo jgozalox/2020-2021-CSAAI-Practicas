@@ -14,6 +14,7 @@ function ocultarBut() {
   document.location.reload(true);
 }
 
+
 const canvas = document.getElementById("canvas");
 
 canvas.width = 415;
@@ -94,7 +95,6 @@ function dibujo()
     ctx.stroke()
   ctx.closePath();
 }
-dibujo();
 
 function dibujoRaquet() 
 {
@@ -127,7 +127,7 @@ function randomColor() {
   return lista[num];
 }
 
-function movimiento() 
+function movimiento()  
 {
   musica.play();
   if (y < yrac-10){
@@ -191,7 +191,6 @@ function movimiento()
       yrac = inicialYrac;
       cancelAnimationFrame(myRequest);
       ctx.clearRect(0, 0, canvas.width, canvas.height);
-      dibujo();
       dibujoRaquet();
       dibujoLadr();
       return;

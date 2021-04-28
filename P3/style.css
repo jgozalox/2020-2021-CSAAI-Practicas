@@ -19,6 +19,10 @@ body{
     border: 2px solid white;
 }
 
+.instrucciones{
+  color: white;
+  text-align: center;
+}
 
 #main {
   width: 90%;
