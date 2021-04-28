@@ -7,6 +7,8 @@ var myAudioPared = document.getElementById("myAudioPared");
 var musica = document.getElementById("musica"); 
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
+var textos = document.getElementsByClassName("instrucciones");
+
 
 function ocultarBut() {
   button.visibility = "hidden";
@@ -215,6 +217,9 @@ document.onkeydown = function (ev) {
           if (numVidas > 0){
             movimiento();
             enjuego = true;
+            textos[0].innerHTML = "";
+            textos[1].innerHTML = "";
+            canvas.style.marginTop = "30px";
           }
           break;
         case 37:
