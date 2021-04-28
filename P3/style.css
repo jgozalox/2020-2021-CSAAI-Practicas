@@ -1,5 +1,9 @@
 body{
+  background-image: url("gifD.gif");
   background-color: black;
+  background-repeat: no-repeat; 
+  background-position: center center;
+  background-size: 1250px 1000px;
   font-family: monaco,Consolas,Lucida Console,monospace;
 }
 

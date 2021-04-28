@@ -1,12 +1,14 @@
 console.log("Ejecutando JS...");
 
+
 var button = document.getElementById("button");
 button.onclick = function() {ocultarBut()};
 
 var myAudioRaquet = document.getElementById("myAudioRaquet"); 
 var myAudioLadrillo = document.getElementById("myAudioLadrillo"); 
+var myAudioPared = document.getElementById("myAudioPared"); 
+var musica = document.getElementById("musica"); 
 
-          
 function ocultarBut() {
   button.visibility = "hidden";
   document.location.reload(true);
@@ -30,8 +32,8 @@ let inicialY = y;
 let inicialXrac = xrac;
 let inicialYrac = yrac;
 
-let velx = 4;
-let vely = 1;
+let velx = 6;
+let vely = 2;
 
 let tamXrac = 60;
 let tamYrac = 10;
@@ -127,6 +129,7 @@ function randomColor() {
 
 function movimiento() 
 {
+  musica.play();
   if (y < yrac-10){
     if (x <= 0 || x >= (canvas.width - 10) ) {
       velx = -velx;
@@ -135,7 +138,7 @@ function movimiento()
       }else if (x >= (canvas.width - 10)){
         document.getElementById("canvas").style.borderRight = randomColor();
       }
-      
+      myAudioPared.play();
     } 
     if (y < 0) {
       vely = -vely;
@@ -150,7 +153,7 @@ function movimiento()
             if ((x >= ladrillos[i][j].x) && (x <= (ladrillos[i][j].x + 35))){
               ladrillos[i][j].visible = false;
               myAudioLadrillo.play();
-              
+
               puntos +=  1;
               vely = -vely;
               document.getElementById("puntos").innerHTML = puntos;
@@ -164,7 +167,6 @@ function movimiento()
     if(( x >= (xrac - tamXrac/2)) && (x <= (xrac + tamXrac/2))){
       vely = -vely;
       myAudioRaquet.play(); 
-      myAudioRaquet.pause(); 
     }else{ 
       document.getElementById("fondo").style.backgroundColor ="#ff0000";
       setInterval(cssIniBG,250);
