@@ -17,6 +17,7 @@ function ocultarBut() {
 
 button.onclick = function() {
   ocultarBut()
+  musica.play();
 };
 
 canvas.width = 415;
@@ -189,6 +190,7 @@ function movimiento()
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       dibujoRaquet();
       dibujoLadr();
+      musica.pause();
       return;
     }
   }
