@@ -233,5 +233,4 @@ document.onkeydown = function (ev) {
           dibujoRaquet();
           break;
      }
-
 }

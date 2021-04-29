@@ -8,7 +8,6 @@ body{
   text-shadow: 2px 2px #FF0000;
 }
 
-
 .lets{
   color: white;
   font-size: 80px;
@@ -20,7 +19,6 @@ body{
     border: 1px solid white;
     margin-top: -29px;
 }
-
 
 #main {
   width: 90%;
@@ -51,7 +49,6 @@ body{
   cursor: pointer;
   border-radius: 5px;
 }
-
 
 #button:hover {background-color: #cccccc}
 
@@ -93,4 +90,3 @@ body{
   0%   {left:5px;}
   100% {right:5px;}
 }
-
