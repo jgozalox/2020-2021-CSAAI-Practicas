@@ -15,6 +15,9 @@ const range_valueR = document.getElementById('range_valueR');
 const range_valueG = document.getElementById('range_valueG');
 const range_valueB = document.getElementById('range_valueB');
 
+// --Botones
+document.getElementById("original").onclick = function() {originalF()};
+document.getElementById("colores").onclick = function() {coloresF()};
 
 //-- Función de retrollamada de imagen cargada
 //-- La imagen no se carga instantaneamente, sino que
@@ -33,6 +36,10 @@ img.onload = function () {
 
   console.log("Imagen lista...");
 };
+
+function myFunction() {
+  document.getElementById("demo").innerHTML = "YOU CLICKED ME!";
+}
 
 function compontentes(){
   var umbralR = deslizadorR.value
