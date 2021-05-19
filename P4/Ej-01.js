@@ -46,11 +46,16 @@ img.onload = function () {
 };
 
 function originalF() {
-  document.getElementById("demo").innerHTML = "YOU CLICKED ME!";
+  deslizadores.style.display = 'none';
+  const img = document.getElementById('stingy');
+  ctx.drawImage(img, 0,0);
+  let imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+  ctx.putImageData(imgData, 0, 0);
 }
 
 function coloresF() {
   deslizadores.style.display = 'inherit';
+  compontentes();
 }
 
 function compontentes(){
