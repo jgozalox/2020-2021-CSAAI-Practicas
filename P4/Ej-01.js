@@ -15,6 +15,7 @@ const range_valueR = document.getElementById('range_valueR');
 const range_valueG = document.getElementById('range_valueG');
 const range_valueB = document.getElementById('range_valueB');
 
+
 //-- Función de retrollamada de imagen cargada
 //-- La imagen no se carga instantaneamente, sino que
 //-- lleva un tiempo. Sólo podemos acceder a ella una vez
