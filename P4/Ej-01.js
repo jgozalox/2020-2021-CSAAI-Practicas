@@ -33,10 +33,12 @@ img.onload = function () {
   console.log("Imagen lista...");
 };
 
-function compontentes(data){
+function compontentes(imgData){
   var umbralR = deslizadorR.value
   var umbralG = deslizadorG.value
   var umbralB = deslizadorB.value
+
+  let data = imgData.data
 
   for (var i = 0; i < data.length; i+=4) {
     if (data[i] > umbralR){
@@ -49,6 +51,9 @@ function compontentes(data){
       data[i+2] = umbralB;
     }
   }
+
+    //-- Poner la imagen modificada en el canvas
+    ctx.putImageData(imgData, 0, 0);
 }
 
 //-- Funcion de retrollamada del deslizador
@@ -63,13 +68,8 @@ deslizadorR.oninput = () => {
   //-- Obtener la imagen del canvas en pixeles
   let imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
 
-  //-- Obtener el array con todos los píxeles
-  let data = imgData.data
+  compontentes(imgData);
 
-  compontentes(data);
-
-  //-- Poner la imagen modificada en el canvas
-  ctx.putImageData(imgData, 0, 0);
 }
 
 deslizadorG.oninput = () => {
@@ -83,13 +83,9 @@ deslizadorG.oninput = () => {
   //-- Obtener la imagen del canvas en pixeles
   let imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
 
-  //-- Obtener el array con todos los píxeles
-  let data = imgData.data
 
-  compontentes(data);
+  compontentes(imgData);
 
-  //-- Poner la imagen modificada en el canvas
-  ctx.putImageData(imgData, 0, 0);
 }
 
 deslizadorB.oninput = () => {
@@ -103,13 +99,9 @@ deslizadorB.oninput = () => {
   //-- Obtener la imagen del canvas en pixeles
   let imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
 
-  //-- Obtener el array con todos los píxeles
-  let data = imgData.data
-  
-  compontentes(data);
 
-  //-- Poner la imagen modificada en el canvas
-  ctx.putImageData(imgData, 0, 0);
+  compontentes(imgData);
+
 }
 
 console.log("Fin...");
