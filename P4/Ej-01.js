@@ -33,10 +33,17 @@ img.onload = function () {
   console.log("Imagen lista...");
 };
 
-function compontentes(imgData){
+function compontentes(){
   var umbralR = deslizadorR.value
   var umbralG = deslizadorG.value
   var umbralB = deslizadorB.value
+
+    //-- Situar la imagen original en el canvas
+  //-- No se han hecho manipulaciones todavia
+  ctx.drawImage(img, 0,0);
+
+  //-- Obtener la imagen del canvas en pixeles
+  let imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
 
   let data = imgData.data
 
@@ -60,48 +67,19 @@ function compontentes(imgData){
 deslizadorR.oninput = () => {
   //-- Mostrar el nuevo valor del deslizador
   range_valueR.innerHTML = deslizadorR.value;
-
-  //-- Situar la imagen original en el canvas
-  //-- No se han hecho manipulaciones todavia
-  ctx.drawImage(img, 0,0);
-
-  //-- Obtener la imagen del canvas en pixeles
-  let imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-
-  compontentes(imgData);
-
+  compontentes();
 }
 
 deslizadorG.oninput = () => {
   //-- Mostrar el nuevo valor del deslizador
   range_valueG.innerHTML = deslizadorG.value;
-
-  //-- Situar la imagen original en el canvas
-  //-- No se han hecho manipulaciones todavia
-  ctx.drawImage(img, 0,0);
-
-  //-- Obtener la imagen del canvas en pixeles
-  let imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-
-
-  compontentes(imgData);
-
+  compontentes();
 }
 
 deslizadorB.oninput = () => {
   //-- Mostrar el nuevo valor del deslizador
   range_valueB.innerHTML = deslizadorB.value;
-
-  //-- Situar la imagen original en el canvas
-  //-- No se han hecho manipulaciones todavia
-  ctx.drawImage(img, 0,0);
-
-  //-- Obtener la imagen del canvas en pixeles
-  let imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-
-
   compontentes(imgData);
-
 }
 
 console.log("Fin...");
