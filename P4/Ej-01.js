@@ -33,7 +33,7 @@ img.onload = function () {
   console.log("Imagen lista...");
 };
 
-function compontentes(){
+function compontentes(data){
   var umbralR = deslizadorR.value
   var umbralG = deslizadorG.value
   var umbralB = deslizadorB.value
@@ -66,7 +66,7 @@ deslizadorR.oninput = () => {
   //-- Obtener el array con todos los píxeles
   let data = imgData.data
 
-  compontentes();
+  compontentes(data);
 
   //-- Poner la imagen modificada en el canvas
   ctx.putImageData(imgData, 0, 0);
@@ -86,7 +86,7 @@ deslizadorG.oninput = () => {
   //-- Obtener el array con todos los píxeles
   let data = imgData.data
 
-  compontentes();
+  compontentes(data);
 
   //-- Poner la imagen modificada en el canvas
   ctx.putImageData(imgData, 0, 0);
@@ -106,7 +106,7 @@ deslizadorB.oninput = () => {
   //-- Obtener el array con todos los píxeles
   let data = imgData.data
   
-  compontentes();
+  compontentes(data);
 
   //-- Poner la imagen modificada en el canvas
   ctx.putImageData(imgData, 0, 0);
