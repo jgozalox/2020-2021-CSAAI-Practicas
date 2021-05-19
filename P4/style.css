@@ -13,7 +13,15 @@ body {
 }
 
 #botones{
- 
   margin-left: 500px;
   margin-top: 80px;
+}
+
+#deslizadores{
+  margin-left: 850px;
+  margin-top: -450px;
+}
+
+p{
+  float: left;
 }
