@@ -2,8 +2,14 @@ console.log("Ejecutando JS....")
 
 //-- Obtener elementos del DOM
 const canvas = document.getElementById('canvas');
-const img = document.getElementById('stingy')
+const img = document.getElementById('stingy');
 const ctx = canvas.getContext('2d');
+
+//-- Acceso al deslizador
+const deslizador = document.getElementById('deslizador');
+
+//-- Valor del deslizador
+const range_value = document.getElementById('range_value');
 
 //-- Función de retrollamada de imagen cargada
 //-- La imagen no se carga instantaneamente, sino que
@@ -20,23 +26,36 @@ img.onload = function () {
   //-- No se han hecho manipulaciones todavia
   ctx.drawImage(img, 0,0);
 
+  console.log("Imagen lista...");
+};
+
+
+//-- Funcion de retrollamada del deslizador
+deslizador.oninput = () => {
+  //-- Mostrar el nuevo valor del deslizador
+  range_value.innerHTML = deslizador.value;
+
+  //-- Situar la imagen original en el canvas
+  //-- No se han hecho manipulaciones todavia
+  ctx.drawImage(img, 0,0);
+
   //-- Obtener la imagen del canvas en pixeles
   let imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
 
   //-- Obtener el array con todos los píxeles
   let data = imgData.data
 
-  //-- Eliminar el canal Rojo:recorrer el array de datos
-  //-- eliminado el canal rojo y dejando el resto igual que
-  //-- estaba
+  //-- Obtener el umbral de rojo del desliador
+  umbral = deslizador.value
+
+  //-- Filtrar la imagen según el nuevo umbral
   for (let i = 0; i < data.length; i+=4) {
-    data[i] = 0; //-- Canal rojo a 0
+    if (data[i] > umbral)
+      data[i] = umbral;
   }
 
   //-- Poner la imagen modificada en el canvas
   ctx.putImageData(imgData, 0, 0);
-
-  console.log("hola....");
-};
+}
 
 console.log("Fin...");
