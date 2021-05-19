@@ -79,7 +79,7 @@ deslizadorG.oninput = () => {
 deslizadorB.oninput = () => {
   //-- Mostrar el nuevo valor del deslizador
   range_valueB.innerHTML = deslizadorB.value;
-  compontentes(imgData);
+  compontentes();
 }
 
 console.log("Fin...");
