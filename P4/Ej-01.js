@@ -37,8 +37,12 @@ img.onload = function () {
   console.log("Imagen lista...");
 };
 
-function myFunction() {
+function originalF() {
   document.getElementById("demo").innerHTML = "YOU CLICKED ME!";
+}
+
+function coloresF() {
+  deslizadorR.style.display = 'none';
 }
 
 function compontentes(){
