@@ -12,6 +12,10 @@ body {
   margin-top: 150px;
 }
 
+#canvas:hover{
+  box-shadow: 0 0 6px 3px rgba(247, 247, 247, 0.5);
+}
+
 #botones{
   margin-left: 380px;
   margin-top: 60px;
@@ -33,14 +37,17 @@ body {
   box-shadow: 0 0 2px 1px rgba(255, 255, 255, 0.5);
 }
 #deslizadores{
-  margin-left: 850px;
-  margin-top: -420px;
+  margin-left: 920px;
+  margin-top: -450px;
 }
 
 p{
   float: left;
 }
 
+.h3{
+  font-family: "Lucida Console", "Courier New", monospace;
+}
 img:hover {
   box-shadow: 0 0 6px 3px rgba(247, 247, 247, 0.5);
 }
