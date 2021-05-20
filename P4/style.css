@@ -43,6 +43,7 @@ body {
 
 .h3{
   font-family: "Lucida Console", "Courier New", monospace;
+  font-weight: bold;
 }
 
 #stingy:hover {
@@ -53,4 +54,10 @@ body {
   position: relative;
   margin-left: 20px;
   margin-top: -1000px;
+}
+
+p{
+  display: inline;
+  font-weight: bold;
+  margin-left: 10px;
 }
