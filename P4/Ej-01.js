@@ -60,10 +60,10 @@ function coloresF() {
 }
 
 function grisesF(){
+  deslizadores.style.display = 'none';
   ctx.drawImage(img, 0,0);
   imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
   data = imgData.data;
-  
   for (var i = 0; i < data.length; i+=4) {
     r = data[i];
     g = data[i+1];
