@@ -29,6 +29,9 @@ body {
   cursor: pointer;
 }
 
+.btn:hover{
+  box-shadow: 0 0 2px 1px rgba(255, 255, 255, 0.5);
+}
 #deslizadores{
   margin-left: 850px;
   margin-top: -420px;
@@ -36,4 +39,8 @@ body {
 
 p{
   float: left;
+}
+
+img:hover {
+  box-shadow: 0 0 6px 3px rgba(247, 247, 247, 0.5);
 }
