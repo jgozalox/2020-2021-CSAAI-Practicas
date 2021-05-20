@@ -44,6 +44,13 @@ body {
 .h3{
   font-family: "Lucida Console", "Courier New", monospace;
 }
-img:hover {
+
+#stingy:hover {
   box-shadow: 0 0 6px 3px rgba(247, 247, 247, 0.5);
+}
+
+#name{
+  position: relative;
+  margin-left: 20px;
+  margin-top: -1000px;
 }
