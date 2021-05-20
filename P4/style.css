@@ -4,12 +4,12 @@ body {
 
 #stingy{
     margin-left: 300px;
-    margin-top: 30px;
+    margin-top: 150px;
   }
 
 #canvas{
   margin-left: 50px;
-  margin-top: 30px;
+  margin-top: 150px;
 }
 
 #botones{
@@ -19,7 +19,7 @@ body {
 
 #deslizadores{
   margin-left: 850px;
-  margin-top: -450px;
+  margin-top: -420px;
 }
 
 p{
