@@ -1,0 +1,17 @@
+body{
+    background-color: grey;
+}
+#titulo{
+    font-weight: bold;
+    margin-left: 460px;
+    margin-top: 50px;
+}
+
+#videos{
+    margin-left: 370px;
+}
+
+video:hover{
+    box-shadow: 0 0 2px 1px rgba(255, 255, 255, 0.5);
+  }
+
