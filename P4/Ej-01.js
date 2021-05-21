@@ -22,6 +22,7 @@ const range_valueB = document.getElementById('range_valueB');
 document.getElementById("original").onclick = function() {originalF()};
 document.getElementById("colores").onclick = function() {coloresF()};
 document.getElementById("grises").onclick = function() {grisesF()};
+document.getElementById("negativo").onclick = function() {negativoF()};
 
 //-- Función de retrollamada de imagen cargada
 //-- La imagen no se carga instantaneamente, sino que
@@ -70,6 +71,24 @@ function grisesF(){
   }
   ctx.putImageData(imgData, 0, 0);
 }
+
+function negativoF() {
+  deslizadores.style.display = 'none';
+  ctx.drawImage(img, 0,0);
+  imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+  data = imgData.data;
+  for (var i = 0; i < data.length; i+=4) {
+    r = data[i];
+    g = data[i+1];
+    b = data[i+2];
+    total = 255;
+    data[i] = total - r;
+    data[i+1] = total - g;
+    data[i+2] = total - b;
+  }
+  ctx.putImageData(imgData, 0, 0);
+}
+
 function compontentes(){
   var umbralR = deslizadorR.value
   var umbralG = deslizadorG.value
