@@ -7,11 +7,31 @@ body{
     margin-top: 50px;
 }
 
-#videos{
+#cajaVideos{
     margin-left: 370px;
 }
 
-video:hover{
+#cajaBotones1{
+    margin-left: 400px;
+}
+
+#cajaBotones2{
+    margin-left: 410px;
+}
+
+input{
+  background-color: #555555;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+input:hover{
     box-shadow: 0 0 2px 1px rgba(255, 255, 255, 0.5);
   }
 
