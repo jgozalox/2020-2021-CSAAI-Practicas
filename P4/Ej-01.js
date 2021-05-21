@@ -23,6 +23,7 @@ document.getElementById("original").onclick = function() {originalF()};
 document.getElementById("colores").onclick = function() {coloresF()};
 document.getElementById("grises").onclick = function() {grisesF()};
 document.getElementById("negativo").onclick = function() {negativoF()};
+document.getElementById("circulo").onclick = function() {circuloF()};
 
 //-- Función de retrollamada de imagen cargada
 //-- La imagen no se carga instantaneamente, sino que
@@ -47,11 +48,13 @@ function originalF() {
   const img = document.getElementById('stingy');
   ctx.drawImage(img, 0,0);
   let imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+  canvas.style.borderRadius = 0 + "px";
   ctx.putImageData(imgData, 0, 0);
 }
 
 function coloresF() {
   deslizadores.style.display = 'inherit';
+  canvas.style.borderRadius = 0 + "px";
   compontentes();
 }
 
@@ -69,6 +72,7 @@ function grisesF(){
     data[i+1] = brillo;
     data[i+2] = brillo;
   }
+  canvas.style.borderRadius = 0 + "px";
   ctx.putImageData(imgData, 0, 0);
 }
 
@@ -86,7 +90,17 @@ function negativoF() {
     data[i+1] = total - g;
     data[i+2] = total - b;
   }
+  canvas.style.borderRadius = 0 + "px";
   ctx.putImageData(imgData, 0, 0);
+}
+
+function circuloF() {
+  deslizadores.style.display = 'none';
+  const img = document.getElementById('stingy');
+  ctx.drawImage(img, 0,0);
+  let imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+  ctx.putImageData(imgData, 0, 0);
+  canvas.style.borderRadius = 50 + "%";
 }
 
 function compontentes(){
