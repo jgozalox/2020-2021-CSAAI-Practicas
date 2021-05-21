@@ -13,14 +13,10 @@ const deslizadorB = document.getElementById('deslizadorB');
 const deslizadores = document.getElementById('deslizadores');
 deslizadores.style.display = 'none';
 
-
-
 //-- Valor del deslizador
 const range_valueR = document.getElementById('range_valueR');
 const range_valueG = document.getElementById('range_valueG');
 const range_valueB = document.getElementById('range_valueB');
-
-
 
 // --Botones
 document.getElementById("original").onclick = function() {originalF()};
@@ -33,7 +29,6 @@ document.getElementById("grises").onclick = function() {grisesF()};
 //-- que esté totalmente cargada
 img.onload = function () {
 
-  
   //-- Se establece como tamaño del canvas el mismo
   //-- que el de la imagen original
   canvas.width = img.width;
