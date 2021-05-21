@@ -4,7 +4,10 @@ const video1 = document.getElementById("video1");
 const btn_video1 = document.getElementById("btn_video1");
 const btn_test = document.getElementById("btn_test");
 const btn_src_on = document.getElementById("btn_src_on");
+const btn_src_off = document.getElementById("btn_src_off");
 
+//Variable de estado
+let estado = False;
 
 //-- Establecer las dimensiones de los vídeos
 directo.width=420;
@@ -22,7 +25,10 @@ video1.poster = TEST_IMAGE_URL;
 
 //-- Boton de FUENTES-ON
 btn_src_on.onclick = () => {
- 
+    
+  //Variable de estado a True
+  estado = True;
+
   //-- Establecer la fuente de la cámara 1
   video1.src="https://gsyc.urjc.es/jmplaza/csaai/realizador-fuente1.mp4";
 
@@ -35,6 +41,14 @@ btn_src_on.onclick = () => {
 
   //-- En la emisión en directo ponemos la imagen de prueba
   directo.poster = TEST_IMAGE_URL;
+};
+
+//-- Boton de FUENTES-OFF
+btn_src_off.onclick = () => {
+    //Variable de estado a False
+    estado = False;
+    directo.src = TEST_IMAGE_URL;
+    video1.src = TEST_IMAGE_URL;    
 };
 
 //-- Botón de Test
