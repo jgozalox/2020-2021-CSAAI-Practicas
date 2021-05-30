@@ -15,3 +15,9 @@ Cuando terminemos de usarla, la apagaremos para evitar que se gaste la pila.
 Con la tecla "AC" borramos la operacion en proceso para poder realizar una nueva.
 
 La calculadora acepta tanto numeros enteros como decimales, dando ambos como resultado.
+
+
+Mejoras:
+- Implementacion de boton de apagado y encendido
+
+- Esto no es una mejora, pero no he utilizado "eval" y lo he hecho con arrays y un largo algoritmo(complicandome la vida, vaya)
